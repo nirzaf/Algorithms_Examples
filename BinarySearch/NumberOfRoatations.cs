@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -85,5 +87,6 @@ namespace Algorithm_A_Day.BinarySearch
             }
             return low;
         }
+
     }
 }

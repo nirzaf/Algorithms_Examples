@@ -7,10 +7,10 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] { 10, 2, 5, 6, 8, 9 };
+            var testArr = new int[] { 10, 2,2,2,2,2, 5, 6,8, 8, 9 };
 
-            NumberOfRoatations numberOfRoatations = new NumberOfRoatations();
-            Console.WriteLine(numberOfRoatations.NumberOfRotation(testArr));
+            FindFirstOccurrence firstOccurrence = new FindFirstOccurrence();
+            firstOccurrence.FindFirstOrLastOccurrence(testArr, 8);
         }
     }
 }
