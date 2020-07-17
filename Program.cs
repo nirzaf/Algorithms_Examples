@@ -10,7 +10,7 @@ namespace Algorith_A_Day
             var testArr = new int[] { 10, 2,2,2,2,2, 5, 6,8, 8, 9 };
 
             FindFirstOccurrence firstOccurrence = new FindFirstOccurrence();
-            firstOccurrence.FindFirstOrLastOccurrence(testArr, 8);
+            firstOccurrence.FindFirst(testArr, 8);
         }
     }
 }

@@ -10,11 +10,13 @@ namespace Algorithm_A_Day.BinarySearch
     /// 
     /// mid = left + (right - left) / 2 it is safe to calculate mid like this with many rekords
     /// 
+    ///
     /// </summary>
+    /// <returns>index not actual value</returns>
     public class FindFirstOccurrence
     {
          //{2, 2, 2, 2, 5, 6, 8, 10, 10, 10 }
-        public int FindFirstOrLastOccurrence(int[] arr, int target)
+        public int FindFirst(int[] arr, int target)
         {
             int left = 0;
             int right = arr.Length - 1;
@@ -37,6 +39,28 @@ namespace Algorithm_A_Day.BinarySearch
             }
             return firstOccurence;
 
+        }
+
+        public int FindLast(int[] arr, int target)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+            int result = -1;
+
+            while(left <= right)
+            {
+                int mid = (left + right) / 2;
+
+                if (arr[mid] == target)
+                {
+                    result = mid;
+                    left = mid + 1;
+                }
+                else if (arr[mid] < target) left = mid + 1;
+                else right = mid - 1;
+
+            }
+            return result;
         }
     }
 }

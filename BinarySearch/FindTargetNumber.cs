@@ -43,7 +43,7 @@ namespace Algorithm_A_Day.BinarySearch
                 //if left half [left..mid] is sorted and mid is not 
                 //the target {12, 14, 18, 21, 3, 6, 8, 9} 21 > 12
 
-                else //(arr[mid] >= arr[left]
+                else //(arr[mid] >= arr[right]
                 {
                     //compare target with arr[mid] and arr[left]
                     //to find if it lies in arr[left..mid]
