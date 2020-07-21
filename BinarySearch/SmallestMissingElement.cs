@@ -14,6 +14,7 @@ namespace Algorithm_A_Day.BinarySearch
     /// </summary>
     public class SmallestMissingElement
     {
+        //recursively
         public int SmallestMissingEL(int[] arr, int left, int right)
         {
             //base condition
@@ -31,6 +32,26 @@ namespace Algorithm_A_Day.BinarySearch
             {
                 return SmallestMissingEL(arr, left, mid - 1); 
             }
+        }
+
+        //iteratively
+        public int SmallestMissingELIter(int[] arr)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+            while (left <= right) {
+
+                int mid = left + (right - left) / 2;
+                if (arr[mid] == mid)
+                {
+                    left =  mid + 1;
+                }
+                else //SME must be on left
+                {
+                    right =  mid - 1;
+                }
+            }
+            return left;
         }
     }
 }
