@@ -7,13 +7,12 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] { 10, 2,2,2,2,2, 5, 6,8, 8, 9 };
+            var testArr = new int[] { 2, 1, 3, 5, 4, 7, 6, 8, 9 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6 };
             var mixedArr = new int[] { 1, 4, 6, 8, 9 };
 
 
-            FindFloorOrCeil floorOrCeil = new FindFloorOrCeil();
-            floorOrCeil.GetFloor(mixedArr, 2);
+            Console.WriteLine(SearchInNearlySorted.GetFromNS(testArr, 9));
         }
     }
 }
