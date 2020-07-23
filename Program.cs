@@ -7,12 +7,12 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] { 2, 1, 3, 5, 4, 7, 6, 8, 9 };
+            var testArr = new int[] { 10,9,8,2,5,6 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6 };
             var mixedArr = new int[] { 1, 4, 6, 8, 9 };
 
 
-            Console.WriteLine(SearchInNearlySorted.GetFromNS(testArr, 9));
+            Console.WriteLine(FindPeakElement.FindPeakRecur(testArr, 0, testArr.Length -1));
         }
     }
 }
