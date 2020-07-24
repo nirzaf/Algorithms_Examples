@@ -21,6 +21,8 @@ namespace Algorithm_A_Day.BinarySearch
             
             //base case we check if mid el is greater than neighbours
             //it takes care of special cases of last and first el
+            //so if mid == 0 and next el is smaller, its peak
+            //if mid ==len -1 and previous is smaller, its peak
             if((mid == 0 || arr[mid -1] <= arr[mid]) &&
                 (mid == arr.Length -1 || arr[mid + 1] <= arr[mid]))
             {
@@ -42,12 +44,29 @@ namespace Algorithm_A_Day.BinarySearch
         {
             int left = 0;
             int right = arr.Length - 1;
-            int mid = left + (right - left) / 2;
+            int result = -1;
 
-            int prev = arr[mid - 1];
-            int next = arr[mid + 1];
+            while(left <= right)
+            {
+                int mid = left + (right - left) / 2;
+                if ((mid == 0 || arr[mid - 1] <= arr[mid]) &&
+                (mid == arr.Length - 1 || arr[mid + 1] <= arr[mid]))
+                {
+                    result = mid;
+                    return result;
+                }
 
-            return -1;
+                if(arr[mid -1] > arr[mid] && mid -1 >= 0)
+                {
+                    right = mid - 1;
+                }
+                else
+                {
+                    left = mid + 1;
+                }
+
+            }
+            return result;
         }
     }
 }

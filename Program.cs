@@ -7,12 +7,11 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] { 10,9,8,2,5,6 };
-            var sortedArr = new int[] { 1, 2, 3, 4, 5, 6 };
+            var testArr = new int[] {8,9,10,2,5,6,7 };
+            var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 4, 6, 8, 9 };
 
-
-            Console.WriteLine(FindPeakElement.FindPeakRecur(testArr, 0, testArr.Length -1));
+            Console.WriteLine(ExponentialSearch.ESearch(sortedArr, 21));
         }
     }
 }
