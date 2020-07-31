@@ -1,4 +1,5 @@
-﻿using Algorithm_A_Day.BinarySearch;
+﻿using Algorithm_A_Day.Arrays.Mix;
+using Algorithm_A_Day.BinarySearch;
 using Algorithm_A_Day.Grid_Based;
 using Algorithm_A_Day.Sorting.BubbleSort;
 using System;
@@ -10,14 +11,14 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] {8,9,10,2,5,6,7 };
+            var testArr = new int[] { 0, -1, -2, 2, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 4, 6, 8, 9 };
             var a = new int[] { 2, 0, 2, 1, 1, 0 };
 
             SortColors.SortColorsMethod(a);
             //King();
-            Power_of_Thor___Episode_1___Codoingame.MoveThor();
+            Pairs_with_Specific_Difference___pramp.FindPairsWithGivenDifference2(testArr, 1); 
         }
 
         public static string[][] King()
