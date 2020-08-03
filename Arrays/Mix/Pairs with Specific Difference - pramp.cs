@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Algorithm_A_Day.Arrays.Mix
@@ -16,8 +17,8 @@ namespace Algorithm_A_Day.Arrays.Mix
             {
                 for (int j = i + 1; j < arr.Length; j++)
                 {
-                    //k = 3 j = 3 i = 5
-                    //i = k - j
+                    //k = 3 j = 2 i = 5
+                    //i = k + j
                     //k = i - j
                     //j = i - k
 
@@ -48,32 +49,111 @@ namespace Algorithm_A_Day.Arrays.Mix
             return result;
         }
 
-        //with dictionaries
-        public static int FindPairsWithGivenDifference2(int[]nums, int k)
+        //with HashSet
+        public static int[,] FindPairsWithGivenDifference2(int[] nums, int k)
         {
-            HashSet<int> hs = new HashSet<int>();
-            HashSet<int> repeat = new HashSet<int>();
             if (k < 0)
-                return 0;
-            for (int i = 0; i < nums.Length; i++)
+                return null;
+            var set = new HashSet<int>(nums);
+
+            //allocate maximum space for arr
+            var result = new int[nums.Length, 2];
+
+            for (int i = 0; i < result.GetLength(0); i++)
             {
-                if (hs.Contains(nums[i]))
-                    repeat.Add(nums[i]);
-                else
-                    hs.Add(nums[i]);
+                if (set.Contains(nums[i] + k))
+                {
+                    for (int j = 0; j < result.GetLength(1); j++)
+                    {
+                        if (j == 0) result[i, j] = nums[i];
+                        else result[i, j] = nums[i] + k;
+                    }
+                }
             }
-            int count = 0;
-            foreach (int val in hs)
+
+            return result;
+
+            //int count = 0;
+            //foreach (int val in set)
+            //{
+            //    0 + 1
+            //    if (set.Contains(val + k))
+            //        count++;
+
+            //}
+            //if (k == 0)
+            //{
+            //    return repeat.Count;
+            //}
+            //return count;
+        }
+
+        //dictionary
+        public static int[,] FindPairsWithGivenDifference3(int[] nums, int k)
+        {
+            var dict = new Dictionary<int, int>();
+
+            foreach (int item in nums)
             {
-                if (hs.Contains(val + k))
-                    count++;
+                dict.Add(item - k, item);
             }
-            if (k == 0)
+
+            var tempList = new List<int>();
+            foreach (var item in nums)
             {
-                return repeat.Count;
+                if (dict.ContainsKey(item))
+                {
+                    tempList.Add(dict[item]);
+                    tempList.Add(item);
+                }
             }
-            return count;
+
+            return Make2DArray(tempList, tempList.Count / 2, 2);
 
         }
-    }
+        
+        public static int[,] Make2DArray(List<int> input, int height, int width)
+        {
+            //to pass test
+            if (input.Count == 0) return new int[0, 0];
+            var arr = new int[height, width];
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    arr[i, j] = input[i * width + j];
+                }
+            }
+
+            return arr;
+        }
+
+
+        //JS
+        //    function findPairsWithGivenDifference(arr, k)
+        //    {
+        //        if (k == 0)
+        //            return []
+
+
+        //        map = { }
+        //        answer = []
+
+
+        //        for (let i = 0; i < arr.length; i++)
+        //        {
+        //            map[arr[i] - k] = arr[i];
+        //        }
+        //        console.log(map);
+        //        for (let y = 0; y < arr.length; y++)
+        //        {
+        //            if (arr[y] in map){
+        //            answer.push([map[arr[y]], Number(arr[y])])
+        //  }
+        //    }
+        //    console.log(answer);   
+        //return answer
+        //}
+}
 }

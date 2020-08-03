@@ -1,9 +1,12 @@
 ﻿using Algorithm_A_Day.Arrays.Mix;
 using Algorithm_A_Day.BinarySearch;
 using Algorithm_A_Day.Grid_Based;
+using Algorithm_A_Day.Patterns.Sliding_Window;
 using Algorithm_A_Day.Sorting.BubbleSort;
+using Algorithm_A_Day.String_operations;
 using System;
 using System.Diagnostics.Tracing;
+using System.Linq;
 
 namespace Algorith_A_Day
 {
@@ -11,14 +14,17 @@ namespace Algorith_A_Day
     {
         static void Main(string[] args)
         {
-            var testArr = new int[] { 0, -1, -2, 2, 1 };
+            var testArr = new int[] { 4,1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 1, 4, 6, 8, 9 };
-            var a = new int[] { 2, 0, 2, 1, 1, 0 };
+            var mixedArr = new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 };
 
-            SortColors.SortColorsMethod(a);
-            //King();
-            Pairs_with_Specific_Difference___pramp.FindPairsWithGivenDifference2(testArr, 1); 
+            string[] fruits = { "grape", "passionfruit", "banana", "mango",
+                      "orange", "raspberry", "apple", "blueberry" };
+
+
+            Pairs_with_Specific_Difference___pramp.FindPairsWithGivenDifference3(testArr, 3);
+            Sliding_Window.GetAverageSubArraysSizeK(5, mixedArr);
+
         }
 
         public static string[][] King()
@@ -54,5 +60,7 @@ namespace Algorith_A_Day
 
             return board;
         }
+
+        
     }
 }
