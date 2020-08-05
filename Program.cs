@@ -16,7 +16,7 @@ namespace Algorith_A_Day
         {
             var testArr = new int[] { 4,1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 1, 3, 2, 6, -1, 4, 1, 8, 2 };
+            var mixedArr = new int[] { 2, 1, 5, 10, 3, 2 };
 
             string[] fruits = { "grape", "passionfruit", "banana", "mango",
                       "orange", "raspberry", "apple", "blueberry" };
@@ -25,42 +25,39 @@ namespace Algorith_A_Day
             Pairs_with_Specific_Difference___pramp.FindPairsWithGivenDifference3(testArr, 3);
             Sliding_Window.GetAverageSubArraysSizeK(5, mixedArr);
 
+            //Smallest_Subarray_with_a_given_sum.findMinSubArray(7, mixedArr);
+            Longest_Substring_with_K_Distinct_Characters.FindLength("araaci", 2);
+
+
         }
 
-        public static string[][] King()
+        //naive solution
+        public static int Yesterdays(int S, int[] arr)
         {
-            Console.WriteLine("Enter number from 1-64:");
-            int input = int.Parse(Console.ReadLine());
-            if(input > 64 || input < 1)
-            {
-                throw new Exception("Wrong input");
-            }
+            int currentSum = 0;
+            int minSize = int.MaxValue;
+            int start = 0;
 
-            string[][] board = new string[8][];
-            for (int i = 0; i < board.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                board[i] = new string[] { ".", ".", ".", ".", ".", ".", ".", "." };
-            }
-            board[0][0] = "O";
-            int counter = 1;
-
-            for (int i = 0; i < board.Length; i++)
-            {
-                for (int j = 0; j < board[i].Length; j++)
+                currentSum += arr[i];
+                
+                while(currentSum >= S)
                 {
-                    if (counter < input && board[i][j] != "O")
-                    {
-                        counter++;
-                    }
-                    else if(board[i][j] != "O") board[i][j] = "X";
-                    Console.Write(board[i][j]);
+                    minSize = Math.Min(i - start + 1, minSize);
+                    currentSum -= arr[start];
+                    start++;
                 }
-                Console.WriteLine();
             }
 
-            return board;
+            return minSize == int.MaxValue ? 0 : minSize;
         }
+        //sliding widow
+        //public static double[] Yesterdays2(int K, int[] arr)
+        //{
 
-        
+
+        //}
+
     }
 }
