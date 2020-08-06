@@ -89,22 +89,34 @@ namespace Algorithm_A_Day.Arrays.Mix
         }
 
         //dictionary
+        // arr = [0, -1, -2, 2, 1], k = 1
+        // here we rely on the fact that if k = x - y then y = x - k
+        // Przetrzymujemy w dict wynik odejmowania k z danego elementu jako klucz i ten element jako wartosc 
+        // czyli w dict mamy y jako klucz i x jako wartosc
+        // co daje dict[y, x] y jako pierwsze poniewaz tak mowi tresc zadania mogloby byc x
+        // 
         public static int[,] FindPairsWithGivenDifference3(int[] nums, int k)
         {
             var dict = new Dictionary<int, int>();
-
+            //x - y = k  5 -3 = 2
+            //x = k + y  5 = 2 + 3
+            //y = x - k   3 = 5 -2   
             foreach (int item in nums)
             {
                 dict.Add(item - k, item);
             }
-
+            //0 - 1 , 0    [-1, 0]
+            // -1 -1 , -1  [-2, -1] 
+            // -2 -1, -2   [-3, -2]
+            // 2 -1, 2     [1, 2]
+            // 1 - 1, 1    [0, 1]
             var tempList = new List<int>();
             foreach (var item in nums)
             {
                 if (dict.ContainsKey(item))
                 {
-                    tempList.Add(dict[item]);
-                    tempList.Add(item);
+                    tempList.Add(dict[item]); //add x 
+                    tempList.Add(item); //add y
                 }
             }
 
@@ -155,5 +167,38 @@ namespace Algorithm_A_Day.Arrays.Mix
         //    console.log(answer);   
         //return answer
         //}
-}
+
+
+        //brute force
+        public static int[,] BindingFlags(int K, int[] arr)
+        {
+            var tempList = new List<int[]>();
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] - arr[j] == K)
+                    {
+                        tempList.Add(new[] { arr[i], arr[j] });
+
+                    }
+                    else if (arr[j] - arr[i] == K)
+                    {
+                        tempList.Add(new[] { arr[j], arr[i] });
+                    }
+                }
+            }
+            var result = new int[tempList.Count, 2];
+            int o = 0;
+            foreach (var item in tempList)
+            {
+                result[o, 0] = item[0];
+                result[o, 1] = item[1];
+
+                o++;
+            }
+
+            return result;
+        }
+    }
 }
