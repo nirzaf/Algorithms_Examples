@@ -7,6 +7,7 @@ namespace Algorithm_A_Day.Sorting.BubbleSort
     /// <summary>
     /// Goal: sort an array. Here every el is compared with next one thus
     /// every position i will be compared with i+1 in every pass
+    /// TC is O(n^2) and SC is 
     /// </summary>
     class BubbleSortPlain
     {

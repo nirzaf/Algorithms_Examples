@@ -32,31 +32,16 @@ namespace Algorith_A_Day
 
             //Yesterdays(7, mixedArr);
 
-            Insertion_sort.InsertionSortPlain(mixedArr);
+            //Insertion_sort.InsertionSortPlain(mixedArr);
+            //Yesterdays(mixedArr);
 
         }
-
-        //naive solution
-        public static int Yesterdays(int S, int[] arr)
-        {
-            int start = 0;
-            int currentSum = 0;
-            int minLength = int.MaxValue;
-
-            for (int end = 0; end < arr.Length; end++)
-            {
-                currentSum += arr[end];
-
-                while(currentSum >= S)
-                {
-                    minLength = Math.Min(minLength, end - start + 1);
-                    currentSum -= arr[start];
-                    start++;
-                }
-            }
-
-            return minLength == int.MaxValue ? 0 : minLength;
-            
-        }
+        //  0  1  2  3  4  5
+        //{ 2, 1, 5, 6, 3, 7 };
+    //naive solution
+        //public static int[] Yesterdays(int[] arr)
+        //{
+           
+        //}
     }
 }

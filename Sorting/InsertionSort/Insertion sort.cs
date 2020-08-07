@@ -7,7 +7,7 @@ namespace Algorithm_A_Day.Sorting.InsertionSort
     /// <summary>
     /// Insertion sort in simple terms compare elements.
     /// If element is smaller than element on the left, we swap them.
-    /// We swap the element until left element on the left is bigger.
+    /// We swap the element until element on the left is bigger.
     /// Worst Case Time Complexity [ Big-O ]: O(n2)
     /// https://www.interviewbit.com/tutorial/insertion-sort-algorithm/
     /// </summary>
