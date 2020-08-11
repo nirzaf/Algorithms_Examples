@@ -51,6 +51,43 @@ namespace Algorithm_A_Day.Patterns.Sliding_Window
 
         }
 
+        //if (str.Length == 0 || K <= 0) return 0;
+
+        //    var dict = new Dictionary<char, int>();
+        //var longest = int.MinValue;
+        //int start = 0;
+
+        //    for (int i = 0; i<str.Length; i++)
+        //    {
+        //        if (!dict.ContainsKey(str[i]))
+        //        {
+        //            dict.Add(str[i], 1);
+        //        }
+        //        else
+        //        {
+        //            dict[str[i]]++;
+        //        }
+
+                
+
+        //        while (dict.Count > K)
+        //        {
+                    
+        //            dict[str[start]]--;
+                    
+        //            if(dict[str[start]] == 0)
+        //            {
+        //                dict.Remove(str[start]);
+        //            }
+        //            start++;
+                    
+
+        //        }
+                
+        //        longest = Math.Max(longest, i - start + 1);
+        //    }
+        //    return longest;
+
     }      
 }
 

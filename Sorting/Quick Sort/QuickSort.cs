@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Algorithm_A_Day.Sorting.Quick_Sort
@@ -10,7 +11,7 @@ namespace Algorithm_A_Day.Sorting.Quick_Sort
     /// It picks an element as a pivot and partition the given array
     /// it's considered as IN-PLACE sorting algorithm
     /// around picked pivot(it can be last/first/random element in array
-    /// GENERAL RULE: 1.we pick pivot element(last one for example)
+    /// GENERAL RULE: 1.we pick pivot element(last el in the arr for example)
     ///               2.we change elements places that all on the left of pivot is smaller
     ///                 all on the right of pivot is bigger 
     ///               3. we apply recursively same algo to the left side and the right side of the pivot
@@ -32,29 +33,38 @@ namespace Algorithm_A_Day.Sorting.Quick_Sort
             }
         }
 
+        //it returns index of computed pivot el
         private static int Partition(int[] arr, int s, int e)
         {
             int pivot = arr[e];
             int pIndex = s;
 
             //e - 1 cause arr[e] is pivot and we dont want to compare it
-            for (int i = 0; i < e -1 ; i++)
+            //i = s!!! cause start is always diferent
+            for (int i = s; i < e ; i++)
             {
                 if(arr[i] <= pivot)
-                {
-                    Swap(arr[i], arr[pIndex]);
+                {    
+                    var temp = arr[i];
+                    arr[i] = arr[pIndex];
+                    arr[pIndex] = temp;
                     pIndex++;
                 }
             }
-            Swap(arr[e], arr[pIndex]);
+            var temp1 = arr[e];
+            arr[e] = arr[pIndex];
+            arr[pIndex] = temp1;
+            //Swap(arr, e, pIndex);
 
             return pIndex;
 
         }
 
-        private static void Swap(int v1, int v2)
-        {
-            throw new NotImplementedException();
-        }
+        //    private static void Swap(int[] arr, int index1, int index2)
+        //    {
+        //        var temp = arr.ElementAt(index1);
+        //        arr[index1] = arr.ElementAt(index2);
+        //        arr[index2] = temp;
+        //    }
     }
 }
