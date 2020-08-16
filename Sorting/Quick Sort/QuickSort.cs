@@ -12,7 +12,7 @@ namespace Algorithm_A_Day.Sorting.Quick_Sort
     /// it's considered as IN-PLACE sorting algorithm
     /// around picked pivot(it can be last/first/random element in array
     /// GENERAL RULE: 1.we pick pivot element(last el in the arr for example)
-    ///               2.we change elements places that all on the left of pivot is smaller
+    ///               2.we change elements places that all on the left of pivot is smaller or EQUAL
     ///                 all on the right of pivot is bigger 
     ///               3. we apply recursively same algo to the left side and the right side of the pivot
     /// It reduces the Space Complexity by not using AUXILIARY arr (merge sort does use one)
@@ -39,11 +39,11 @@ namespace Algorithm_A_Day.Sorting.Quick_Sort
             int pivot = arr[e];
             int pIndex = s;
 
-            //e - 1 cause arr[e] is pivot and we dont want to compare it
+            //e cause arr[e] is pivot and we dont want to compare it
             //i = s!!! cause start is always diferent
             for (int i = s; i < e ; i++)
             {
-                if(arr[i] <= pivot)
+                if(arr[i] <= pivot) //equal means we take equal values on the left
                 {    
                     var temp = arr[i];
                     arr[i] = arr[pIndex];

@@ -8,7 +8,8 @@ namespace Algorithm_A_Day.Sorting.MergeSort
     /// Divide and Conquer algorithm
     /// IT IS NOT IN PLACE ALGO becuse it uses aux data structure(array)
     /// every recursion call it divide current array into 2 parts 
-    /// Until its only one element in given arr
+    /// Until its only one element in given arr then the element are compared and merge as a sorted subarr
+    /// TC : O(n log(n)) very effective algorithm
     /// </summary>
     public class MergeSort
     {
@@ -18,7 +19,7 @@ namespace Algorithm_A_Day.Sorting.MergeSort
             {
                 //middle el
                 int m = (s + e) / 2;
-                //NOT m + 1 because we want el at index m too
+                //NOT m - 1 because we want el at index m too in case of odd number of elements
                 MergeSortPlain(arr, s, m);
                 MergeSortPlain(arr, m + 1, e);
                 Merge(arr, s, m, e);
@@ -27,8 +28,11 @@ namespace Algorithm_A_Day.Sorting.MergeSort
 
         private static void Merge(int[] arr, int s, int m, int e)
         {
-            int i = s, j = m + 1, k = s; //k is index pointer for temp arr
-            var temp = new int[e];
+            int i = s;
+            int j = m + 1;
+            int k = s; //k is index pointer for temp arr
+
+            var temp = new int[arr.Length];
 
             //2 arrays here left subarray [i...m] and right subarray [j...e]
 
@@ -49,7 +53,8 @@ namespace Algorithm_A_Day.Sorting.MergeSort
                     j++;
                     k++;
                 }
-            }
+            }//END OF WHILE
+
             //there are some el left in  left in left subarray
             // and can be transfer to temp without comaparing (they are sorted already)
             while (i <= m)
