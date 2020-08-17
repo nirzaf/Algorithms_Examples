@@ -10,6 +10,8 @@ namespace Algorithm_A_Day.Sorting.MergeSort
     /// every recursion call it divide current array into 2 parts 
     /// Until its only one element in given arr then the element are compared and merge as a sorted subarr
     /// TC : O(n log(n)) very effective algorithm
+    /// SC : O(n)
+    /// https://www.quora.com/Algorithms-How-does-merge-sort-have-space-complexity-O-n-for-worst-case
     /// </summary>
     public class MergeSort
     {
