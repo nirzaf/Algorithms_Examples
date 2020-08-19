@@ -30,11 +30,11 @@ namespace Algorithm_A_Day.Sorting.MergeSort
 
         private static void Merge(int[] arr, int s, int m, int e)
         {
-            int i = s;
-            int j = m + 1;
-            int k = s; //k is index pointer for temp arr
+            int i = s;     //first el at the left subarray
+            int j = m + 1; //first el at the right subarray
+            int k = 0;     //k is index pointer for temp arr
 
-            var temp = new int[arr.Length];
+            var temp = new int[(e - s )+ 1];
 
             //2 arrays here left subarray [i...m] and right subarray [j...e]
 
@@ -77,7 +77,7 @@ namespace Algorithm_A_Day.Sorting.MergeSort
             //copy temp arr to original arr
             for (int p = s; p <= e; p++)
             {
-                arr[p] = temp[p];
+                arr[p] = temp[p -s];
             }
         }
     }

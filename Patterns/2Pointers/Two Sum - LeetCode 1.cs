@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithm_A_Day.Patterns.Sliding_Window._2Pointers
+namespace Algorithm_A_Day.Patterns._2Pointers
 {
     public class Two_Sum___LeetCode_1
     {
