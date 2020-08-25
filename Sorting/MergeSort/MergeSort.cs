@@ -75,6 +75,9 @@ namespace Algorithm_A_Day.Sorting.MergeSort
             }
 
             //copy temp arr to original arr
+            // arr[p] cause we need to change orginal array from the index of current start(e.x 3)
+            // temp[p-s] cause we always initailize temp from 0 index so for s = 3, 3-3 , 4 - 3, 5 -3 so 0,1,2
+            // so we take index in middle of orginal and set from BEGGINGIN of temp
             for (int p = s; p <= e; p++)
             {
                 arr[p] = temp[p -s];

@@ -29,7 +29,7 @@ namespace Algorithm_A_Day.Sorting.MergeSort
 
             for (i = 0; i < n1; i++)
             {
-                L[i] = arr[l + 1];
+                L[i] = arr[l + i];
             }
             
             for (j = 0; j < n2; j++)
