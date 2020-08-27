@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Algorithm_A_Day.Grid_Based
 {
+
+    /// <summary>
+    /// NOTICE; (0,0) is top left corner so y while icreasing it goes down instead of up in the classsical geometry
+    /// </summary>
     public class Power_of_Thor___Episode_1___Codoingame
     {
         public static void MoveThor()
@@ -110,6 +114,44 @@ namespace Algorithm_A_Day.Grid_Based
             //{
             //    break;
             //}
+        }
+
+        public static string MoveThor2(ValueTuple<int, int> thor, ValueTuple<int, int> light)
+        {
+            string result = "";
+
+            while(thor.Item1 != light.Item1 || thor.Item2 != light.Item2)
+            {
+                if(thor.Item1 != light.Item1)
+                {
+                    if (thor.Item1 > light.Item1)
+                    {
+                        result += "W";
+                        thor.Item1--;
+                    }
+                    else if (thor.Item1 < light.Item1)
+                    {
+                        result += "E";
+                        thor.Item1++;
+                    }
+                }
+                
+                if(thor.Item2 != light.Item2)
+                {
+                    if (thor.Item2 > light.Item2)
+                    {
+                        result += "N";
+                        thor.Item2--;
+                    }
+                    else if (thor.Item2 < light.Item2)
+                    {
+                        result += "S";
+                        thor.Item2++;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

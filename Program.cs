@@ -31,73 +31,48 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
 
+            int[][] arrOfArrays = new int[3][];
+            arrOfArrays[0] = new[] { 2, 1, 1 };
+            arrOfArrays[1] = new[] { 1, 1, 0 };
+            arrOfArrays[2] = new[] { 0, 1, 1 };
+
+            var arrOfArrays2 = new int[][]
+            {
+                new int[] {1, 2, 3},
+                new int[] {4, 5, 6},
+                new int[] {7, 8, 9}
+            };
+
+            int[,] Arr2D = new int[3, 2] {
+            { 1, 2 },
+            { 2, 3 },
+            { 3, 4 }
+            };
+
             var testArr = new int[] { 1, 2, 3, 4, };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 0, 1, 2, 2, 3, 0, 4, 2 };
+            var mixedArr = new int[] { 3, 2, 2, 3 };
+
+
+            Console.WriteLine(Power_of_Thor___Episode_1___Codoingame.MoveThor2((3, 5), (8, 9)));
             
-
-
-            RemoveElement_LC___27.RemoveElement(mixedArr, 2);
 
 
         }
         //  0  1  2  3  4  5
         //{ 2, 1, 5, 6, 7, 3 };
-        //{ 6, 7, 2, 1, 5, 3 };
+        //{ 0,1,2,2,3,0,4,2 };
 
         //naive solution
-        public static void Yesterdays(int[] arr, int s, int e)
+        public static void Yesterdays(int[] arr, int val)
         {
-            //base case
-            if (s < e)
-            {
-                int m = (s + e) / 2;
-                Yesterdays(arr, s, m);
-                Yesterdays(arr, m + 1, e);
-                Example(arr, s, m, e);
-            }
+            
         }
 
-        private static void Example(int[] arr, int s, int m, int e)
-        {
-            int k = 0;
-            int i = s;
-            int j = m + 1;
-            var temp = new int[e - s + 1];
-
-            while(i <= m && j <= e)
-            {
-                if(arr[i] < arr[j])
-                {
-                    temp[k] = arr[i];
-                    k++;
-                    i++;
-                }
-                else
-                {
-                    temp[k] = arr[j];
-                    k++;
-                    j++;
-                }
-            }
-            while (i <= m)
-            {
-                temp[k] = arr[i];
-                k++;
-                i++;
-            }
-            while (j <= e)
-            {
-                temp[k] = arr[j];
-                k++;
-                j++;
-            }
-
-            for (int l = s; l < e; l++)
-            {
-                arr[l] = temp[l -s];
-            }
-        }
+        //private static void Example(int[] arr, int s, int m, int e)
+        //{
+            
+        //}
 
     }
 }
