@@ -54,7 +54,7 @@ namespace Algorith_A_Day
             var mixedArr = new int[] { 3, 2, 2, 3 };
 
 
-            Console.WriteLine(Power_of_Thor___Episode_1___Codoingame.MoveThor2((3, 5), (8, 9)));
+            LevelOrder(tree);
             
 
 
@@ -64,14 +64,45 @@ namespace Algorith_A_Day
         //{ 0,1,2,2,3,0,4,2 };
 
         //naive solution
-        public static void Yesterdays(int[] arr, int val)
+        public static IList<IList<int>> LevelOrder(TreeNode root)
         {
-            
+            if (root == null) return null;
+
+            var result = new List<IList<int>>();
+
+            var q = new Queue<TreeNode>();
+            q.Enqueue(root);
+
+            while(q.Count > 0)
+            {
+                int size = q.Count;
+                var newList = new List<int>();
+
+                for (int i = 0; i < size; i++)
+                {
+                    var curr = q.Dequeue();
+                    newList.Add(curr.val);
+
+                    if (curr.left != null)
+                    {
+                        q.Enqueue(curr.left);
+                    }
+
+                    if (curr.right != null)
+                    {
+                        q.Enqueue(curr.right);
+                    }
+                }
+                result.Add(newList);
+                
+            }
+            result.Reverse();
+            return result;
         }
 
         //private static void Example(int[] arr, int s, int m, int e)
         //{
-            
+
         //}
 
     }

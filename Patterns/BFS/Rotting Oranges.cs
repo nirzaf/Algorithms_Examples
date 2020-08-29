@@ -36,6 +36,9 @@ namespace Algorithm_A_Day.Patterns.BFS
                 }
             }
 
+            if (fresh == 0) return 0;// everything is rotten
+            if (rottenQueue.Count == 0) return 0;// none is rotten
+
             // ARRAY of tuples
             var directions = new ValueTuple<int, int>[]
                 { (1, 0), (0, -1), (-1, 0), (0, 1) };
@@ -57,14 +60,18 @@ namespace Algorithm_A_Day.Patterns.BFS
                     if(grid[i][j] == 1)
                     {
                         grid[i][j] = 2;
-                        fresh--;rottenQueue.Enqueue((i, j));
+                        fresh--;
+                        rottenQueue.Enqueue((i, j));
                         rottenInMinute++;
                     }
                        
                 }
             }
 
-            if(rotten == 0 && rottenInMinute > 0)
+            // case when orange is not adjecent(adzejsen XD) to any rotten ones
+            if (fresh > 0) return -1;
+            //??
+            if (rotten == 0 && rottenInMinute > 0)
             {
                 minutes++;
                 rotten = rottenInMinute;
