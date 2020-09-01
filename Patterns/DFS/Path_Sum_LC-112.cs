@@ -37,5 +37,23 @@ namespace Algorithm_A_Day.Patterns.DFS
             }
             return false;
         }
+
+        public static bool HasPathSumRecur(TreeNode root, int sum)
+        {
+            if (root == null)
+            {
+                return false;
+            }
+            else if (root != null && root.left == null &&
+                root.right == null && root.val == sum)
+            {
+                return true;
+            }
+            else
+            {
+                int localSum = sum - root.val;
+                return HasPathSumRecur(root.left, localSum) || HasPathSumRecur(root.right, localSum);
+            }
+        }
     }
 }

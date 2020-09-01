@@ -4,6 +4,7 @@ using Algorithm_A_Day.BinaryTreeTraversal;
 using Algorithm_A_Day.Grid_Based;
 using Algorithm_A_Day.Patterns._2Pointers;
 using Algorithm_A_Day.Patterns.BFS;
+using Algorithm_A_Day.Patterns.DFS;
 using Algorithm_A_Day.Patterns.Sliding_Window;
 using Algorithm_A_Day.Sorting;
 using Algorithm_A_Day.Sorting.MergeSort;
@@ -54,7 +55,7 @@ namespace Algorith_A_Day
             var mixedArr = new int[] { 3, 2, 2, 3 };
 
 
-            Level_Order_Traversal.LevelOrderRecur(tree);
+            Binary_Tree_Paths.BinaryTreePaths(tree);
             
 
 
