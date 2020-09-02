@@ -1,6 +1,6 @@
 ﻿using Algorithm_A_Day.Arrays.Mix;
 using Algorithm_A_Day.BinarySearch;
-using Algorithm_A_Day.BinaryTreeTraversal;
+using Algorithm_A_Day.NodesModels;
 using Algorithm_A_Day.Grid_Based;
 using Algorithm_A_Day.Patterns._2Pointers;
 using Algorithm_A_Day.Patterns.BFS;
@@ -31,6 +31,14 @@ namespace Algorith_A_Day
 
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
+            //cycled linked list
+            ListNode x1 = new ListNode(3), x2 = new ListNode(2), x3 = new ListNode(0), x4 = new ListNode(4);
+            x1.next = x2;
+            x2.next = x3;
+            x3.next = x4;
+            x4.next = x2;
+
+            
 
             int[][] arrOfArrays = new int[3][];
             arrOfArrays[0] = new[] { 2, 1, 1 };
@@ -55,7 +63,7 @@ namespace Algorith_A_Day
             var mixedArr = new int[] { 3, 2, 2, 3 };
 
 
-            Binary_Tree_Paths.BinaryTreePaths(tree);
+            Binary_Tree_Paths.BinaryTreePaths2Queues(tree);
             
 
 

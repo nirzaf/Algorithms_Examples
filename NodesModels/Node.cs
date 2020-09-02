@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithm_A_Day.BinaryTreeTraversal
+namespace Algorithm_A_Day.NodesModels
 {
     public class Node
     {

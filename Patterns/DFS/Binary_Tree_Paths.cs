@@ -1,4 +1,4 @@
-﻿using Algorithm_A_Day.BinaryTreeTraversal;
+﻿using Algorithm_A_Day.NodesModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +7,8 @@ namespace Algorithm_A_Day.Patterns.DFS
 {
     public class Binary_Tree_Paths
     {
-        //iteratively
+        //iteratively with new property IsVisited
+        // TODO important to understand example !
         public static IList<string> BinaryTreePaths(TreeNode root)
         {
             var result = new List<string>();
@@ -15,32 +16,88 @@ namespace Algorithm_A_Day.Patterns.DFS
 
             var s = new Stack<TreeNode>();
             s.Push(root);
-            string path = string.Empty;
+            var temp = root.left;
 
 
             while (s.Count > 0)
             {
-                var curr = s.Pop();
-                path += curr.val.ToString() + "->";
-
-                if (curr.right != null)
+                //store left sub tree nodes
+                //it makes sure that left side of the top node is null
+                while(temp != null)
                 {
-                    s.Push(curr.right);
-                }
-                if (curr.left != null)
-                {
-                    s.Push(curr.left);
-
+                    s.Push(temp);
+                    temp = temp.left;
                 }
 
-                if (curr.left == null && curr.right == null)
+                var top = s.Peek();
+
+                if (!top.isVisited)
                 {
-                    result.Add(path.Trim(new char[] {'-','>' }));
-                    path = path.Substring(0, path.Length - 3);
+                    top.isVisited = true;
+                    //set temp to the right node
+                    temp = top.right;
+                    //check the right side
+                    if (temp == null)
+                    {
+                        //both sides are null so we can print current stack
+                        string stackString = PrintStack(s);
+                        result.Add(stackString);
+                        //pop visited node from stack
+                        s.Pop();
+                    }
+                }
+                else
+                {
+                    //pop visited node from stack
+                    s.Pop();
+                }    
+            }
+            return result;
+        }
+
+        private static string PrintStack(Stack<TreeNode> s)
+        {
+            string result = string.Empty;
+            var enumerator = s.GetEnumerator();
+
+            while (enumerator.MoveNext())
+            {
+                result += enumerator.Current.val.ToString() + ">-";
+            }
+
+            var charrArray = result.ToCharArray();
+            Array.Reverse(charrArray);
+            return new string(charrArray).Trim(new char[] { '-', '>' });
+        }
+
+        // iterative with 2 Queues np Stack 
+        // brilliant !!!
+        public static IList<string> BinaryTreePaths2Queues(TreeNode root)
+        {
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            Queue<string> qStr = new Queue<string>();
+            IList<string> result = new List<string>();
+            if (root == null) return result;
+            queue.Enqueue(root); qStr.Enqueue(root.val.ToString());
+            while (queue.Count != 0)
+            {
+                TreeNode cur = queue.Dequeue();
+                string curStr = qStr.Dequeue();
+                if (cur.left == null && cur.right == null) result.Add(curStr);
+                if (cur.left != null)
+                {
+                    queue.Enqueue(cur.left);
+                    qStr.Enqueue(curStr + "->" + cur.left.val);
+                }
+                if (cur.right != null)
+                {
+                    queue.Enqueue(cur.right);
+                    qStr.Enqueue(curStr + "->" + cur.right.val);
                 }
             }
             return result;
         }
+
 
         // recursively
         public static IList<string> BinaryTreePathsRecur(TreeNode root)
