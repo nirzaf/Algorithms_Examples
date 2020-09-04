@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Algorithm_A_Day.Arrays.Mix
+namespace Algorithm_A_Day.Arrays.Arrays.Codingame
 {
     /// <summary>
     /// Goal: Get the closest element to 0;

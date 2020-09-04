@@ -1,5 +1,4 @@
-﻿using Algorithm_A_Day.Arrays.Mix;
-using Algorithm_A_Day.BinarySearch;
+﻿using Algorithm_A_Day.BinarySearch;
 using Algorithm_A_Day.NodesModels;
 using Algorithm_A_Day.Grid_Based;
 using Algorithm_A_Day.Patterns._2Pointers;
@@ -15,6 +14,7 @@ using System.Diagnostics.Tracing;
 using System.IO.Pipes;
 using System.Linq;
 using System.Net.Sockets;
+using Algorithm_A_Day.Patterns.FastAndSlowPointers;
 
 namespace Algorith_A_Day
 {
@@ -32,7 +32,7 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             //cycled linked list
-            ListNode x1 = new ListNode(3), x2 = new ListNode(2), x3 = new ListNode(0), x4 = new ListNode(4);
+            ListNode x1 = new ListNode(3), x2 = new ListNode(2), x3 = new ListNode(0), x4 = new ListNode(4), x5 = new ListNode(9);
             x1.next = x2;
             x2.next = x3;
             x3.next = x4;
@@ -62,8 +62,8 @@ namespace Algorith_A_Day
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 3, 2, 2, 3 };
 
-
-            Binary_Tree_Paths.BinaryTreePaths2Queues(tree);
+            Link_List_Cycle_LC_141.HasCycle(x1);
+            
             
 
 
