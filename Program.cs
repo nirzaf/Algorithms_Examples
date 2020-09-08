@@ -15,6 +15,7 @@ using System.IO.Pipes;
 using System.Linq;
 using System.Net.Sockets;
 using Algorithm_A_Day.Patterns.FastAndSlowPointers;
+using Algorithm_A_Day.Patterns.MergeIntervals;
 
 namespace Algorith_A_Day
 {
@@ -40,6 +41,12 @@ namespace Algorith_A_Day
 
             
 
+            int[][] intervals = new int[4][];
+            intervals[0] = new[] { 15, 18 };
+            intervals[1] = new[] { 2, 6 };
+            intervals[2] = new[] { 8, 10 };
+            intervals[3] = new[] { 1, 3 };
+            
             int[][] arrOfArrays = new int[3][];
             arrOfArrays[0] = new[] { 2, 1, 1 };
             arrOfArrays[1] = new[] { 1, 1, 0 };
@@ -58,13 +65,14 @@ namespace Algorith_A_Day
             { 3, 4 }
             };
 
-            var testArr = new int[] { 1, 2, 3, 4, };
+            var testArr = new int[] { 1, 12, -5, -6, 50, 3 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 3, 2, 2, 3 };
+            var mixedArr = new int[] { 1,2,1 };
 
-            Link_List_Cycle_LC_141.HasCycle(x1);
-            
-            
+            Fruit_Into_Baskets_LC_904.TotalFruit(mixedArr);
+
+
+
 
 
         }
@@ -73,46 +81,32 @@ namespace Algorith_A_Day
         //{ 0,1,2,2,3,0,4,2 };
 
         //naive solution
-        public static IList<IList<int>> LevelOrder(TreeNode root)
-        {
-            if (root == null) return null;
-
-            var result = new List<IList<int>>();
-
-            var q = new Queue<TreeNode>();
-            q.Enqueue(root);
-
-            while(q.Count > 0)
-            {
-                int size = q.Count;
-                var newList = new List<int>();
-
-                for (int i = 0; i < size; i++)
-                {
-                    var curr = q.Dequeue();
-                    newList.Add(curr.val);
-
-                    if (curr.left != null)
-                    {
-                        q.Enqueue(curr.left);
-                    }
-
-                    if (curr.right != null)
-                    {
-                        q.Enqueue(curr.right);
-                    }
-                }
-                result.Add(newList);
-                
-            }
-            result.Reverse();
-            return result;
-        }
-
-        //private static void Example(int[] arr, int s, int m, int e)
+        //public static IList<IList<int>> LevelOrder(TreeNode root)
         //{
-
+            
         //}
+
+        private static int Example(string s)
+        {
+            if (s.Length == 0) return 0;
+            if (s.Length == 1) return 1;
+
+            int result = int.MinValue;
+            var dict = new Dictionary<char, int>();
+            int start = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (dict.ContainsKey(s[i]))
+                {
+                    start = Math.Max(dict[s[i]], start);
+                }
+                result = Math.Max(result, i - start + 1);
+                dict[s[i]] =  i + 1;
+            }
+
+            return result == int.MinValue ? 0 : result;
+        }
 
     }
 }
