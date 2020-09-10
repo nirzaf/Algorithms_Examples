@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Algorithm_A_Day.Patterns.Sliding_Window
 {
+    // TODO: analyse this
     public class Fruit_Into_Baskets_LC_904
     {
         public static int TotalFruit(int[] tree)
@@ -45,7 +46,6 @@ namespace Algorithm_A_Day.Patterns.Sliding_Window
             return maxFruit;
         }
 
-        // TODO: analyse this
         public int TotalFruit2(int[] tree)
         {
             int left = 0;

@@ -16,6 +16,7 @@ using System.Linq;
 using System.Net.Sockets;
 using Algorithm_A_Day.Patterns.FastAndSlowPointers;
 using Algorithm_A_Day.Patterns.MergeIntervals;
+using Algorithm_A_Day.Patterns.CyclicSort;
 
 namespace Algorith_A_Day
 {
@@ -65,11 +66,11 @@ namespace Algorith_A_Day
             { 3, 4 }
             };
 
-            var testArr = new int[] { 1, 12, -5, -6, 50, 3 };
+            var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 1,2,1 };
+            var mixedArr = new int[] { 3,2,2};
 
-            Fruit_Into_Baskets_LC_904.TotalFruit(mixedArr);
+            Set_Mismatch_LC_645.FindErrorNums3(mixedArr);
 
 
 
@@ -86,26 +87,20 @@ namespace Algorith_A_Day
             
         //}
 
-        private static int Example(string s)
+        private static int[] Example(int[] nums1, int[] nums2)
         {
-            if (s.Length == 0) return 0;
-            if (s.Length == 1) return 1;
+            var result = new List<int>();
+            if (nums1.Length == 0 || nums2.Length == 0) return new int[] { };
+            int left = 0;
+            int right = nums1.Length - 1;
 
-            int result = int.MinValue;
-            var dict = new Dictionary<char, int>();
-            int start = 0;
-
-            for (int i = 0; i < s.Length; i++)
+            for (int i = 0; i < nums1.Length; i++)
             {
-                if (dict.ContainsKey(s[i]))
-                {
-                    start = Math.Max(dict[s[i]], start);
-                }
-                result = Math.Max(result, i - start + 1);
-                dict[s[i]] =  i + 1;
+
             }
 
-            return result == int.MinValue ? 0 : result;
+
+
         }
 
     }
