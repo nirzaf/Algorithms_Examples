@@ -123,15 +123,20 @@ namespace Algorithm_A_Day.Arrays.Arrays.Pramp
             // 2 -1, 2     [1, 2]
             // 1 - 1, 1    [0, 1]
             var tempList = new List<int>();
+            //var tempList2 = new List<int[]>();
             foreach (var item in nums)
             {
                 if (dict.ContainsKey(item))
                 {
+                    //var tempArr = new int[2];
+                    //tempArr[0] = dict[item];
+                    //tempArr[0] = item;
+                    //tempList2.Add(tempArr);
                     tempList.Add(dict[item]); //add x 
                     tempList.Add(item); //add y
                 }
             }
-
+            //return tempList2.ToArray();
             return Make2DArray(tempList, tempList.Count / 2, 2);
 
         }

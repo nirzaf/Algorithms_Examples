@@ -8,7 +8,7 @@ namespace Algorithm_A_Day.NodesModels
     {
         public int val;
         public ListNode next;
-        public ListNode(int x)
+        public ListNode(int x = 0, ListNode next = null)
         {
             val = x;
             next = null;

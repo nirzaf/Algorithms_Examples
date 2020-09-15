@@ -17,6 +17,9 @@ using System.Net.Sockets;
 using Algorithm_A_Day.Patterns.FastAndSlowPointers;
 using Algorithm_A_Day.Patterns.MergeIntervals;
 using Algorithm_A_Day.Patterns.CyclicSort;
+using Algorithm_A_Day.Patterns.ReverseLinkedList;
+using Algorithm_A_Day.Arrays.Arrays.Pramp;
+using Algorithm_A_Day.Arrays.LeetCode;
 
 namespace Algorith_A_Day
 {
@@ -34,11 +37,11 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             //cycled linked list
-            ListNode x1 = new ListNode(3), x2 = new ListNode(2), x3 = new ListNode(0), x4 = new ListNode(4), x5 = new ListNode(9);
+            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
             x3.next = x4;
-            x4.next = x2;
+
 
             
 
@@ -68,11 +71,9 @@ namespace Algorith_A_Day
 
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 3,2,2};
+            var mixedArr = new int[] { 1, 2, 3 };
 
-            Set_Mismatch_LC_645.FindErrorNums3(mixedArr);
-
-
+            Pancake_Sorting_LC_969.PancakeSort2(mixedArr);
 
 
 
@@ -84,24 +85,38 @@ namespace Algorith_A_Day
         //naive solution
         //public static IList<IList<int>> LevelOrder(TreeNode root)
         //{
-            
+
         //}
 
-        private static int[] Example(int[] nums1, int[] nums2)
-        {
-            var result = new List<int>();
-            if (nums1.Length == 0 || nums2.Length == 0) return new int[] { };
-            int left = 0;
-            int right = nums1.Length - 1;
+        //private static int[][] Example(int[] nums1, int k)
+        //{
+        //    //var result = new List<int[]>();
+        //    //for (int i = 0; i < nums1.Length -1; i++)
+        //    //{
+        //    //    for (int j = i + 1; j < nums1.Length; j++)
+        //    //    {
+        //    //        if (nums1[j] - nums1[i] == k)
+        //    //        {
+        //    //            result.Add(new int[] { nums1[j], nums1[i] });
+        //    //        }
+        //    //        else if (nums1[i] - nums1[j] == k)
+        //    //        {
+        //    //            result.Add(new int[] { nums1[i], nums1[j] });
+        //    //        }
 
-            for (int i = 0; i < nums1.Length; i++)
-            {
+        //    //    }
+        //    //}
 
-            }
+        //    //return result.ToArray();
+
+        //    var result = new List<int[]>();
+        //    var dict = new Dictionary<int, int>();
 
 
+        //}
 
-        }
+
 
     }
+
 }
