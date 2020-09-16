@@ -20,6 +20,7 @@ using Algorithm_A_Day.Patterns.CyclicSort;
 using Algorithm_A_Day.Patterns.ReverseLinkedList;
 using Algorithm_A_Day.Arrays.Arrays.Pramp;
 using Algorithm_A_Day.Arrays.LeetCode;
+using Algorithm_A_Day.Patterns.Subsets;
 
 namespace Algorith_A_Day
 {
@@ -73,7 +74,7 @@ namespace Algorith_A_Day
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 2, 3 };
 
-            Pancake_Sorting_LC_969.PancakeSort2(mixedArr);
+            Subsets_LC_78.SubsetsRecur(mixedArr);
 
 
 
