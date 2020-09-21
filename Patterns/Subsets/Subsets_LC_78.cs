@@ -18,6 +18,7 @@ namespace Algorithm_A_Day.Patterns.Subsets
                 int currentCount = result.Count;
                 for (int i = 0; i < currentCount; i++)
                 {
+                    var x = result[i];
                     List<int> subset = result[i].ToList();// save the current list
                     subset.Add(num);
                     result.Add(subset);

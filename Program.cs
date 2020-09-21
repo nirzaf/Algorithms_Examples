@@ -21,6 +21,8 @@ using Algorithm_A_Day.Patterns.ReverseLinkedList;
 using Algorithm_A_Day.Arrays.Arrays.Pramp;
 using Algorithm_A_Day.Arrays.LeetCode;
 using Algorithm_A_Day.Patterns.Subsets;
+using Algorithm_A_Day.MathRelated.Pramp;
+using Algorithm_A_Day.Patterns.ModifiedBinarySearch;
 
 namespace Algorith_A_Day
 {
@@ -72,10 +74,9 @@ namespace Algorith_A_Day
 
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 1, 2, 3 };
+            var mixedArr = new int[] { 2, 5 };
 
-            Subsets_LC_78.SubsetsRecur(mixedArr);
-
+            Binary_Search_LC_704.Search(mixedArr, 5);
 
 
         }
@@ -83,41 +84,37 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        //naive solution
-        //public static IList<IList<int>> LevelOrder(TreeNode root)
-        //{
+        private static double Example(double x, int n)
+        {
+            if (x == 0) return 0;
 
-        //}
+            double error = 0.001;
+            double upperBound = x;
+            double lowerBound = 0;
+            double approxNum = (upperBound + lowerBound) / 2;
 
-        //private static int[][] Example(int[] nums1, int k)
-        //{
-        //    //var result = new List<int[]>();
-        //    //for (int i = 0; i < nums1.Length -1; i++)
-        //    //{
-        //    //    for (int j = i + 1; j < nums1.Length; j++)
-        //    //    {
-        //    //        if (nums1[j] - nums1[i] == k)
-        //    //        {
-        //    //            result.Add(new int[] { nums1[j], nums1[i] });
-        //    //        }
-        //    //        else if (nums1[i] - nums1[j] == k)
-        //    //        {
-        //    //            result.Add(new int[] { nums1[i], nums1[j] });
-        //    //        }
+            while(approxNum - lowerBound >= error)
+            {
+                var current = Math.Pow(approxNum, n);
+                if (current > x)
+                {
+                    upperBound = approxNum;        
+                }
+                else if (current < x)
+                {
+                    lowerBound = approxNum;
+                }
+                else
+                {
+                    break;
+                }
+                approxNum = (upperBound + lowerBound) / 2;
+            }
+            return approxNum;
 
-        //    //    }
-        //    //}
+        }
 
-        //    //return result.ToArray();
-
-        //    var result = new List<int[]>();
-        //    var dict = new Dictionary<int, int>();
-
-
-        //}
-
-
-
+        // 9 + 0 / 2 = 4.5 -> (4.5)^2 = 20.25 -> upperbund = approxNum else lowerBound = approx
     }
 
 }
