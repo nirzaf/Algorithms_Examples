@@ -16,7 +16,7 @@ namespace Algorithm_A_Day.Patterns.K_thLargestElement
         /// <summary>
         /// Goal here is to leave always k largest items in dictionary
         /// every iteration:
-        /// -we add items to dictionary number: quantity
+        /// -we add items to dictionary Key:number,Value: quantity
         /// - check if dictionary size is not bigger than k if yes :
         /// we take first element in dictionary and remove(or decrement) it
         /// </summary>

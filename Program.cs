@@ -23,6 +23,7 @@ using Algorithm_A_Day.Arrays.LeetCode;
 using Algorithm_A_Day.Patterns.Subsets;
 using Algorithm_A_Day.MathRelated.Pramp;
 using Algorithm_A_Day.Patterns.ModifiedBinarySearch;
+using Algorithm_A_Day.Patterns.K_way_Merge;
 
 namespace Algorith_A_Day
 {
@@ -39,11 +40,18 @@ namespace Algorith_A_Day
 
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
-            //cycled linked list
-            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
+            // linked list
+            ListNode x1 = new ListNode(1), x2 = new ListNode(4), x3 = new ListNode(5), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
-            x3.next = x4;
+            //x3.next = x4;
+            ListNode y1 = new ListNode(1), y2 = new ListNode(3), y3 = new ListNode(4);
+            y1.next = y2;
+            y2.next = y3;
+            ListNode z1 = new ListNode(2), z2 = new ListNode(6);
+            z1.next = z2;
+
+            
 
 
             
@@ -76,7 +84,8 @@ namespace Algorith_A_Day
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 2, 5 };
 
-            Binary_Search_LC_704.Search(mixedArr, 5);
+            Merge_k_Sorted_Lists v = new Merge_k_Sorted_Lists();
+            v.MergeKLists(new ListNode[] { x1, y1, z1 });
 
 
         }
