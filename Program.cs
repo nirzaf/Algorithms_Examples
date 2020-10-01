@@ -24,6 +24,7 @@ using Algorithm_A_Day.Patterns.Subsets;
 using Algorithm_A_Day.MathRelated.Pramp;
 using Algorithm_A_Day.Patterns.ModifiedBinarySearch;
 using Algorithm_A_Day.Patterns.K_way_Merge;
+using Algorithm_A_Day.Patterns.DP_01Knapsack;
 
 namespace Algorith_A_Day
 {
@@ -82,10 +83,9 @@ namespace Algorith_A_Day
 
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 2, 5 };
+            var mixedArr = new int[] { 0, -1, -2, 2, 1 };
 
-            Merge_k_Sorted_Lists v = new Merge_k_Sorted_Lists();
-            v.MergeKLists(new ListNode[] { x1, y1, z1 });
+            Example(mixedArr, 1);
 
 
         }
@@ -93,37 +93,32 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static double Example(double x, int n)
+        private static int Example(int[] nums, int k)
         {
-            if (x == 0) return 0;
-
-            double error = 0.001;
-            double upperBound = x;
-            double lowerBound = 0;
-            double approxNum = (upperBound + lowerBound) / 2;
-
-            while(approxNum - lowerBound >= error)
+            var result = new List<int[]>();
+            for (int i = 0; i < nums.Length ; i++)
             {
-                var current = Math.Pow(approxNum, n);
-                if (current > x)
-                {
-                    upperBound = approxNum;        
+                for (int j = nums.Length -1; j > i; j--)
+                { 
+                    if(nums[i] - nums[j] == k )
+                    {
+                        result.Add(new int[] { nums[i], nums[j] });
+                    }else if (nums[j] - nums[i] == k)
+                    {
+                        result.Add(new int[] { nums[j], nums[i]  });
+                    }
                 }
-                else if (current < x)
-                {
-                    lowerBound = approxNum;
-                }
-                else
-                {
-                    break;
-                }
-                approxNum = (upperBound + lowerBound) / 2;
             }
-            return approxNum;
+            return 1;
 
         }
 
-        // 9 + 0 / 2 = 4.5 -> (4.5)^2 = 20.25 -> upperbund = approxNum else lowerBound = approx
+        //private static int[,] ConvertTo2DArray(List<int[]> list)
+        //{
+
+        //}
+
+
     }
 
 }
