@@ -25,6 +25,7 @@ using Algorithm_A_Day.MathRelated.Pramp;
 using Algorithm_A_Day.Patterns.ModifiedBinarySearch;
 using Algorithm_A_Day.Patterns.K_way_Merge;
 using Algorithm_A_Day.Patterns.DP_01Knapsack;
+using Algorithm_A_Day.Extensions;
 
 namespace Algorith_A_Day
 {
@@ -85,7 +86,9 @@ namespace Algorith_A_Day
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 0, -1, -2, 2, 1 };
 
-            Example(mixedArr, 1);
+            //Example(mixedArr, 1);
+            Permutation_in_String_LC_567.CheckInclusion2("dad", "bbacdoadd");
+
 
 
         }
@@ -93,30 +96,34 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static int Example(int[] nums, int k)
+        //private static int[,] Example(int[] nums, int k)
+        //{
+        //    //[x,y] x-y = k, y = x - k
+        //    var map = new Dictionary<int, int>();
+
+        //    foreach (int num in nums)
+        //    {
+        //        map.Add(num - k, num);
+        //    }
+        //    {
+
+        //    }
+        //}
+
+        private static int[,] ConvertTo2DArray(List<int[]> list)
         {
-            var result = new List<int[]>();
-            for (int i = 0; i < nums.Length ; i++)
+            var result = new int[list.Count(), 2];
+
+            for (int i = 0; i < list.Count; i++)
             {
-                for (int j = nums.Length -1; j > i; j--)
-                { 
-                    if(nums[i] - nums[j] == k )
-                    {
-                        result.Add(new int[] { nums[i], nums[j] });
-                    }else if (nums[j] - nums[i] == k)
-                    {
-                        result.Add(new int[] { nums[j], nums[i]  });
-                    }
+                for (int j = 0; j < 2; j++)
+                {
+                    result[i, j] = list[i][j];
                 }
             }
-            return 1;
 
+            return result;
         }
-
-        //private static int[,] ConvertTo2DArray(List<int[]> list)
-        //{
-
-        //}
 
 
     }

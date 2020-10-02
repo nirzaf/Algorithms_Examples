@@ -214,6 +214,20 @@ namespace Algorithm_A_Day.Arrays.Arrays.Pramp
 
                 o++;
             }
+            //private static int[,] ConvertTo2DArray(List<int[]> list)
+            //{
+            //    var result = new int[list.Count(), 2];
+
+            //    for (int i = 0; i < list.Count; i++)
+            //    {
+            //        for (int j = 0; j < 2; j++)
+            //        {
+            //            result[i, j] = list[i][j];
+            //        }
+            //    }
+
+            //    return result;
+            //}
 
             return result;
         }
