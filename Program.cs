@@ -84,10 +84,10 @@ namespace Algorith_A_Day
 
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 0, -1, -2, 2, 1 };
+            var mixedArr = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
 
             //Example(mixedArr, 1);
-            Permutation_in_String_LC_567.CheckInclusion2("dad", "bbacdoadd");
+            Find_All_Duplicates_in_Array_442.FindDuplicates3(mixedArr);
 
 
 

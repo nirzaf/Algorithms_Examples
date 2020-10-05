@@ -25,6 +25,7 @@ namespace Algorithm_A_Day.Patterns.FastAndSlowPointers
             // if any time fast is null that means thery is no cycle
             // if  fast.next is not null fast.next.next CANNOT be null because 
             // of the nature of cycle
+            //while(fast, slow, fast.next)
             while (fast != null && fast.next != null)
             {
                 fast = fast.next.next;

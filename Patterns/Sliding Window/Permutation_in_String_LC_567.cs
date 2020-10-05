@@ -67,6 +67,15 @@ namespace Algorithm_A_Day.Patterns.Sliding_Window
             return true;
         }
 
+        /// <summary>
+        /// Here we use acii values so that we create array and indexes are letters a = 0, b = 1 c= 2 etc
+        /// in one we save target string in another add first n of target.len in string2 
+        /// then each iteration we move window to the right and decrement left side
+        /// we compere substring to target looking if they are ANAGRAMS.
+        /// </summary>
+        /// <param name="s1"></param>
+        /// <param name="s2"></param>
+        /// <returns></returns>
         public static bool CheckInclusion2(string s1, string s2)
         {
             int[] s1Frequency = getFrequency(s1);

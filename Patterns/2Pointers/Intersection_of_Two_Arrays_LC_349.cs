@@ -13,7 +13,7 @@ namespace Algorithm_A_Day.Patterns._2Pointers
     /// while loop conditions check if index are in range
     /// we compere elements on both arr if el is smaller we increase containing array index 
     /// </summary>
-    public class Intersection
+    public class Intersection_of_Two_Arrays_LC_349
     {
         public static int[] IntersectionMethod(int[] nums1, int[] nums2)
         {
