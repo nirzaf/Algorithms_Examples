@@ -43,10 +43,12 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             // linked list
-            ListNode x1 = new ListNode(1), x2 = new ListNode(4), x3 = new ListNode(5), x4 = new ListNode(4), x5 = new ListNode(5);
+            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
-            //x3.next = x4;
+            x3.next = x4;
+            x4.next = x5;
+
             ListNode y1 = new ListNode(1), y2 = new ListNode(3), y3 = new ListNode(4);
             y1.next = y2;
             y2.next = y3;
@@ -84,10 +86,10 @@ namespace Algorith_A_Day
 
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
-            var mixedArr = new int[] { 4, 3, 2, 7, 8, 2, 3, 1 };
+            var mixedArr = new int[] { 1, 2, 2 };
 
-            //Example(mixedArr, 1);
-            Find_All_Duplicates_in_Array_442.FindDuplicates3(mixedArr);
+            Subsets_II_LC_90.SubsetsWithDup(mixedArr);
+
 
 
 
@@ -96,34 +98,12 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        //private static int[,] Example(int[] nums, int k)
-        //{
-        //    //[x,y] x-y = k, y = x - k
-        //    var map = new Dictionary<int, int>();
-
-        //    foreach (int num in nums)
-        //    {
-        //        map.Add(num - k, num);
-        //    }
-        //    {
-
-        //    }
-        //}
-
-        private static int[,] ConvertTo2DArray(List<int[]> list)
+        private static ListNode Example(ListNode head, int m, int n)
         {
-            var result = new int[list.Count(), 2];
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                for (int j = 0; j < 2; j++)
-                {
-                    result[i, j] = list[i][j];
-                }
-            }
-
-            return result;
+            
         }
+
+
 
 
     }

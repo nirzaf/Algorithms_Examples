@@ -8,6 +8,7 @@ namespace Algorithm_A_Day.Patterns.ReverseLinkedList
     public class Reverse_Linked_List_LC_206
     {
         //iteratively
+        //TODO: why head is 1 at the end ?????
         public static ListNode ReverseList(ListNode head)
         {
             if (head == null) return head;
