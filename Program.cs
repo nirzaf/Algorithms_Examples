@@ -87,9 +87,9 @@ namespace Algorith_A_Day
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 2, 2 };
+            var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
-            Subsets_II_LC_90.SubsetsWithDup(mixedArr);
-
+            Find_Smallest_Letter_Greater_Than_Target_LC_744.NextGreatestLetter(mixedArr2, 'd');
 
 
 
@@ -98,9 +98,10 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static ListNode Example(ListNode head, int m, int n)
+        private static int Example()
         {
-            
+            bool x = 'a' > 'z';
+            return 0;
         }
 
 

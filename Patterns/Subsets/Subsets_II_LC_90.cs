@@ -23,11 +23,11 @@ namespace Algorithm_A_Day.Patterns.Subsets
                     var tempList = result[j].ToList();
                     tempList.Add(nums[i]);
 
-                    if(!IsListInList(result, tempList))
-                    result.Add(tempList);
+                    if (!IsListInList(result, tempList))
+                        result.Add(tempList);
                 }
             }
-            
+
             return result;
         }
 
@@ -36,12 +36,12 @@ namespace Algorithm_A_Day.Patterns.Subsets
             bool result1 = false;
             foreach (var list in result)
             {
-                if(list.Count == tempList.Count)
+                if (list.Count == tempList.Count)
                 {
                     bool isSame = false;
                     for (int i = 0; i < tempList.Count; i++)
                     {
-                        if(list[i] == tempList[i])
+                        if (list[i] == tempList[i])
                         {
                             isSame = true;
                         }
@@ -50,7 +50,7 @@ namespace Algorithm_A_Day.Patterns.Subsets
                             isSame = false;
                         }
                     }
-                    if(isSame == true)
+                    if (isSame == true)
                     {
                         result1 = true;
                         break;
@@ -60,6 +60,16 @@ namespace Algorithm_A_Day.Patterns.Subsets
             return result1;
         }
         // itarative
+        /// <summary>
+        /// Diffrence between this and withoug duplicate is:
+        /// here we check nums for duplicate and get the start index accordingly but 
+        /// nums MUST BE SORTED other wise same numbers won't next to each other
+        /// for [1,2,2] first we add empty [] to the list of lists
+        /// first itteration:  1 != 0 so startIndex = 0  [] [1] 
+        /// second itteration: 2 != 1 so startIndex = 0 [] [1] [2] [1,2]    
+        /// first itteration: 2 == 2 so startIndex = previosuSize -> 2, so we add 2 from index 2  [] [1] [2] [1,2] [2,2] [1,2,2]  
+        /// </summary>
+
         public static IList<IList<int>> SubsetsWithDup2(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
@@ -94,7 +104,7 @@ namespace Algorithm_A_Day.Patterns.Subsets
             return result;
         }
 
-        private void helper(int[] nums, IList<IList<int>> result, List<int> currentList, int start)
+        private static void helper(int[] nums, IList<IList<int>> result, List<int> currentList, int start)
         {
             result.Add(currentList.ToList());
             for (int i = start; i < nums.Length; i++)
@@ -109,3 +119,4 @@ namespace Algorithm_A_Day.Patterns.Subsets
 
         }
     }
+}
