@@ -20,7 +20,6 @@ namespace Algorithm_A_Day.Patterns.K_thLargestElement
         /// - check if dictionary size is not bigger than k if yes :
         /// we take first element in dictionary and remove(or decrement) it
         /// </summary>
-        /// <returns></returns>
         //min heap solution with sorted dictionary
         public int FindKthLargest2(int[] nums, int k)
         {

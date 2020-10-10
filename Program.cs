@@ -26,6 +26,7 @@ using Algorithm_A_Day.Patterns.ModifiedBinarySearch;
 using Algorithm_A_Day.Patterns.K_way_Merge;
 using Algorithm_A_Day.Patterns.DP_01Knapsack;
 using Algorithm_A_Day.Extensions;
+using Algorithm_A_Day.Patterns.K_thLargestElement;
 
 namespace Algorith_A_Day
 {
@@ -73,9 +74,10 @@ namespace Algorith_A_Day
 
             var arrOfArrays2 = new int[][]
             {
-                new int[] {1, 2, 3},
-                new int[] {4, 5, 6},
-                new int[] {7, 8, 9}
+                new int[] {1, 3},
+                new int[] {-2, 2},
+                new int[] {2, -2}
+
             };
 
             int[,] Arr2D = new int[3, 2] {
@@ -89,8 +91,8 @@ namespace Algorith_A_Day
             var mixedArr = new int[] { 1, 2, 2 };
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
-            Find_Smallest_Letter_Greater_Than_Target_LC_744.NextGreatestLetter(mixedArr2, 'd');
 
+            K_Closest_Points_to_Origin_LC_973.KClosest(arrOfArrays2, 2);
 
 
         }
@@ -98,10 +100,11 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static int Example()
+        private static void Example(int[][] x)
         {
-            bool x = 'a' > 'z';
-            return 0;
+            var x1 = x[0][0];
+            var x2 = x[1][1];
+            var p = x[1];
         }
 
 
