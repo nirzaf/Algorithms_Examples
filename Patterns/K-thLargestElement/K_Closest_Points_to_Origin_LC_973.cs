@@ -11,6 +11,7 @@ namespace Algorithm_A_Day.Patterns.K_thLargestElement
         /// pow(x2 - x1, 2) + pow(y2 - y1, 2)
         /// here it is just (pow(x,2) + pow(y,2) becasue origin point is always (0,0)
         /// </summary>
+        /// TODO: make it work
         public static int[][] KClosest(int[][] points, int K)
         {
             List<int[]> result = new List<int[]>();

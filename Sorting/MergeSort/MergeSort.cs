@@ -15,31 +15,31 @@ namespace Algorithm_A_Day.Sorting.MergeSort
     /// </summary>
     public class MergeSort
     {
-        public static void MergeSortPlain(int[] arr, int s, int e)
+        public static void MergeSortPlain(int[] arr, int start, int end)
         {
-            if(e > s)
+            if(end > start)
             {
                 //middle el
-                int m = (s + e) / 2;
+                int m = (start + end) / 2;
                 //NOT m - 1 because we want el at index m too in case of odd number of elements
-                MergeSortPlain(arr, s, m);
-                MergeSortPlain(arr, m + 1, e);
-                Merge(arr, s, m, e);
+                MergeSortPlain(arr, start, m);
+                MergeSortPlain(arr, m + 1, end);
+                Merge(arr, start, m, end);
             }
         }
 
-        private static void Merge(int[] arr, int s, int m, int e)
+        private static void Merge(int[] arr, int start, int mid, int end)
         {
-            int i = s;     //first el at the left subarray
-            int j = m + 1; //first el at the right subarray
+            int i = start;     //first el at the left subarray
+            int j = mid + 1; //first el at the right subarray
             int k = 0;     //k is index pointer for temp arr
 
-            var temp = new int[(e - s )+ 1];
+            var temp = new int[(end - start )+ 1];
 
             //2 arrays here left subarray [i...m] and right subarray [j...e]
 
             //it checks boundaries ranges for both subarries
-            while (i <= m && j <= e)
+            while (i <= mid && j <= end)
             {
                 //element in left arr is smaller and goes to temp
                 if(arr[i] <= arr[j])
@@ -59,7 +59,7 @@ namespace Algorithm_A_Day.Sorting.MergeSort
 
             //there are some el left in  left in left subarray
             // and can be transfer to temp without comaparing (they are sorted already)
-            while (i <= m)
+            while (i <= mid)
             {
                 temp[k] = arr[i];
                 i++;
@@ -67,7 +67,7 @@ namespace Algorithm_A_Day.Sorting.MergeSort
             }
             //there are some el left in right in left subarray
             // and can be transfer to temp without comaparing (they are sorted already
-            while (j <= e)
+            while (j <= end)
             {
                 temp[k] = arr[j];
                 j++;
@@ -78,9 +78,9 @@ namespace Algorithm_A_Day.Sorting.MergeSort
             // arr[p] cause we need to change orginal array from the index of current start(e.x 3)
             // temp[p-s] cause we always initailize temp from 0 index so for s = 3, 3-3 , 4 - 3, 5 -3 so 0,1,2
             // so we take index in middle of orginal and set from BEGGINGIN of temp
-            for (int p = s; p <= e; p++)
+            for (int p = start; p <= end; p++)
             {
-                arr[p] = temp[p -s];
+                arr[p] = temp[p -start];
             }
         }
     }

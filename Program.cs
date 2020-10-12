@@ -27,6 +27,8 @@ using Algorithm_A_Day.Patterns.K_way_Merge;
 using Algorithm_A_Day.Patterns.DP_01Knapsack;
 using Algorithm_A_Day.Extensions;
 using Algorithm_A_Day.Patterns.K_thLargestElement;
+using Algorithm_A_Day.MathRelated;
+using System.Reflection;
 
 namespace Algorith_A_Day
 {
@@ -44,19 +46,20 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             // linked list
-            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
+            ListNode x1 = new ListNode(1), x2 = new ListNode(4), x3 = new ListNode(5), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
-            x3.next = x4;
-            x4.next = x5;
+            //x3.next = x4;
+            //x4.next = x5;
 
             ListNode y1 = new ListNode(1), y2 = new ListNode(3), y3 = new ListNode(4);
             y1.next = y2;
             y2.next = y3;
+
             ListNode z1 = new ListNode(2), z2 = new ListNode(6);
             z1.next = z2;
 
-            
+            var listOfLN = new ListNode[] { x1, y1, z1 };
 
 
             
@@ -86,13 +89,20 @@ namespace Algorith_A_Day
             { 3, 4 }
             };
 
+            var z = 2.82842;
+            int o = Convert.ToInt32(z);// rounds to 3 so 2.455->2  (no ceiling 2.1 -> 3)
+            int p = (int)z; // it floors to 2
+
+
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 2, 2 };
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
 
-            K_Closest_Points_to_Origin_LC_973.KClosest(arrOfArrays2, 2);
+            //K_Closest_Points_to_Origin_LC_973.KClosest2(arrOfArrays2, 2);
+            Merge_k_Sorted_Lists.MergeKLists3(listOfLN);
+            //MergeSort.MergeSortPlain(testArr, 0, testArr.Length - 1);
 
 
         }
@@ -100,16 +110,23 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static void Example(int[][] x)
+        private static void Example(int[] arr)
         {
-            var x1 = x[0][0];
-            var x2 = x[1][1];
-            var p = x[1];
+            if (arr.Length == 0 || arr == null) return; //returns nothing
+
+            MergeSortEx(arr, 0, arr.Length);
+
         }
 
+        private static void MergeSortEx(int[] arr, int left, int right)
+        {
+
+            int mid = (left + right) / 2;
+            MergeSortEx(arr, left, mid);
+            MergeSortEx(arr, mid + 1, right);
 
 
-
+        }
     }
 
 }
