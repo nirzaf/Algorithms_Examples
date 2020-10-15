@@ -29,6 +29,7 @@ using Algorithm_A_Day.Extensions;
 using Algorithm_A_Day.Patterns.K_thLargestElement;
 using Algorithm_A_Day.MathRelated;
 using System.Reflection;
+using Algorithm_A_Day.Multidimensional_Arrays;
 
 namespace Algorith_A_Day
 {
@@ -77,16 +78,17 @@ namespace Algorith_A_Day
 
             var arrOfArrays2 = new int[][]
             {
-                new int[] {1, 3},
-                new int[] {-2, 2},
-                new int[] {2, -2}
+                new int[] { 1, 2, 3 },
+                new int[] { 4, 5, 6 },
+                new int[] { 7, 8, 9 }
 
             };
 
-            int[,] Arr2D = new int[3, 2] {
-            { 1, 2 },
-            { 2, 3 },
-            { 3, 4 }
+            // each array len must be the same
+            int[,] TwoDArray = new int[3, 4] {
+                { 1, 2, 3, 8 },
+                { 4, 5, 6, 9 },
+                { 7, 8, 9, 10 }
             };
 
             var z = 2.82842;
@@ -100,9 +102,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
 
-            //K_Closest_Points_to_Origin_LC_973.KClosest2(arrOfArrays2, 2);
-            Merge_k_Sorted_Lists.MergeKLists3(listOfLN);
-            //MergeSort.MergeSortPlain(testArr, 0, testArr.Length - 1);
+            Spiral_Matrix_LC_54.SpiralOrder2(TwoDArray);
 
 
         }
