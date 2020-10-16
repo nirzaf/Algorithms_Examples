@@ -65,16 +65,17 @@ namespace Algorith_A_Day
 
             
 
-            int[][] intervals = new int[4][];
-            intervals[0] = new[] { 15, 18 };
-            intervals[1] = new[] { 2, 6 };
-            intervals[2] = new[] { 8, 10 };
-            intervals[3] = new[] { 1, 3 };
+            int[][] intervals = new int[3][];
+            intervals[0] = new[] { 1, 2, 3 };
+            intervals[1] = new[] { 4, 5, 6 };
+            intervals[2] = new[] { 7, 8, 9 };
+            //intervals[3] = new[] { 1, 3 };
             
-            int[][] arrOfArrays = new int[3][];
-            arrOfArrays[0] = new[] { 2, 1, 1 };
-            arrOfArrays[1] = new[] { 1, 1, 0 };
-            arrOfArrays[2] = new[] { 0, 1, 1 };
+            int[][] arrOfArrays = new int[4][];
+            arrOfArrays[0] = new[] { 5, 1, 9, 11 };
+            arrOfArrays[1] = new[] { 2, 4, 8, 10 };
+            arrOfArrays[2] = new[] { 13, 3, 6, 7 };
+            arrOfArrays[3] = new[] { 15, 14, 12, 16 };
 
             var arrOfArrays2 = new int[][]
             {
@@ -102,7 +103,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
 
-            Spiral_Matrix_LC_54.SpiralOrder2(TwoDArray);
+            Rotate_Image_LC_48.Rotate(intervals);
 
 
         }
