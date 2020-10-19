@@ -103,7 +103,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
 
-            Rotate_Image_LC_48.Rotate(intervals);
+            Spiral_Matrix_II_59.GenerateMatrix(3);
 
 
         }
