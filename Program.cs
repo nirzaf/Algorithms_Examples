@@ -30,6 +30,7 @@ using Algorithm_A_Day.Patterns.K_thLargestElement;
 using Algorithm_A_Day.MathRelated;
 using System.Reflection;
 using Algorithm_A_Day.Multidimensional_Arrays;
+using System.Numerics;
 
 namespace Algorith_A_Day
 {
@@ -41,8 +42,11 @@ namespace Algorith_A_Day
                 "Abba", "Blur", "Chic", "Eurythmics", "Genesis", "INXS", "Midnight Oil", "Kent", "Queen", "Madness", "Manic Street Preachers",
                 "Noir Desir", "The Offspring", "Pink Floyd", "Oasis", "Rammstein", "Queen", "Red Hot Chili Peppers", "Tears for Fears", "Deep Purple", "KISS", "Oasis" };
 
-            TreeNode tree = new TreeNode(1, new TreeNode(3, new TreeNode(5, null, null), new TreeNode(4, null, null)),
-                                new TreeNode(2, new TreeNode(3, null, null), new TreeNode(8, null, null)));
+            TreeNode tree = new TreeNode(5, new TreeNode(4, new TreeNode(11, new TreeNode(7, null, null), new TreeNode(2, null, null)), null),
+                                new TreeNode(8, new TreeNode(13, null, null), new TreeNode(4, new TreeNode(5, null, null), new TreeNode(1, null, null))));
+
+            TreeNode tree3 = new TreeNode(3, new TreeNode(9, null, null), new TreeNode(20, new TreeNode(15, null, null), new TreeNode(7, null, null)));
+            TreeNode tree4 = new TreeNode(2147483647, new TreeNode(2147483647, null, null), new TreeNode(2147483647, null, null));
 
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
@@ -103,7 +107,8 @@ namespace Algorith_A_Day
             var mixedArr2 = new char[] { 'c', 'f', 'j' };
 
 
-            Spiral_Matrix_II_59.GenerateMatrix(3);
+            //Path_Sum_II_LC_113.PathSum(tree, 22);
+            Average_of_Levels_in_Binary_Tree_LC_637.AverageOfLevels(tree4);
 
 
         }
@@ -111,21 +116,27 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static void Example(int[] arr)
+        private static void Example()
         {
-            if (arr.Length == 0 || arr == null) return; //returns nothing
+            var q = new Queue<int>();
+            q.Enqueue(3);
+            q.Enqueue(1);
+            q.Enqueue(10);
 
-            MergeSortEx(arr, 0, arr.Length);
+            var x = q.Dequeue();// 3
+
+            var s = new Stack<int>();
+            s.Push(3);
+            s.Push(1);
+            s.Push(10);
+
+            var x2 = s.Pop(); // 10
+
 
         }
 
         private static void MergeSortEx(int[] arr, int left, int right)
         {
-
-            int mid = (left + right) / 2;
-            MergeSortEx(arr, left, mid);
-            MergeSortEx(arr, mid + 1, right);
-
 
         }
     }
