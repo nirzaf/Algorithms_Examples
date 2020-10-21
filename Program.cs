@@ -31,6 +31,8 @@ using Algorithm_A_Day.MathRelated;
 using System.Reflection;
 using Algorithm_A_Day.Multidimensional_Arrays;
 using System.Numerics;
+using Algorithm_A_Day.RandomEasy;
+using Algorithm_A_Day.String_operations.Pramp;
 
 namespace Algorith_A_Day
 {
@@ -104,11 +106,10 @@ namespace Algorith_A_Day
             var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 2, 2 };
-            var mixedArr2 = new char[] { 'c', 'f', 'j' };
+            var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            //Path_Sum_II_LC_113.PathSum(tree, 22);
-            Average_of_Levels_in_Binary_Tree_LC_637.AverageOfLevels(tree4);
+            Longest_Common_Prefix_LC_14.LongestCommonPrefix2(mixedArr2);
 
 
         }
