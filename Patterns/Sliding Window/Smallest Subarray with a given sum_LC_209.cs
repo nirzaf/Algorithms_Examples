@@ -21,7 +21,7 @@ namespace Algorithm_A_Day.Patterns.Sliding_Window
     /// we DONT exit loop; min is (3, 3-2+1) = 1, substract 10 so sum is 0 
     /// next we do the same with last 2 elements but they are summing up to s
     /// </summary>
-    public class Smallest_Subarray_with_a_given_sum
+    public class Smallest_Subarray_with_a_given_sum_LC_209
     {
         //TC O(N+N) which is asymptotically equivalent to O(N)
         public static int FindMinSubArray(int S, int[] arr)
@@ -42,6 +42,62 @@ namespace Algorithm_A_Day.Patterns.Sliding_Window
             }
 
             return minLength == int.MaxValue ? 0 : minLength;
+        }
+
+        //variant with dictionary and returning exact array
+        public static int[] MinSubArrayLen(int s, int[] nums)
+        {
+            var result = new List<int>();
+            var dict = new Dictionary<int, int>();
+
+            int start = 0, end = 0;
+            int currentSum = 0;
+            int min = int.MaxValue;
+
+            for (int i = start; i < nums.Length; i++)
+            {
+                currentSum += nums[i];
+                if (!dict.ContainsKey(nums[i]))
+                {
+                    dict.Add(nums[i], 1);
+                }
+                else
+                {
+                    dict[nums[i]]++;
+                }
+
+                while (currentSum >= s)
+                {
+
+                    result = DictToList(dict);
+                    min = Math.Min(min, result.Count);
+
+                    dict[nums[end]]--;
+                    if(dict[nums[end]] == 0)
+                    {
+                        dict.Remove(nums[end]);
+                    }
+                    currentSum -= nums[end];
+                    end++;
+
+                }
+            }
+            return result.ToArray();
+
+
+        }
+
+        private static List<int> DictToList(Dictionary<int, int> dict)
+        {
+            var result = new List<int>();
+            foreach (KeyValuePair<int, int> pair in dict)
+            {
+                for (int i = 0; i < pair.Value; i++)
+                {
+                    result.Add(pair.Key);
+                }
+            }
+            return result;
         }
     }
 }

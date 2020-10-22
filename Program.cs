@@ -103,13 +103,13 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
+            var testArr = new int[] { 2, 3, 1, 2, 4, 3 };
             var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
             var mixedArr = new int[] { 1, 2, 2 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Longest_Common_Prefix_LC_14.LongestCommonPrefix2(mixedArr2);
+            Roman_to_Integer_LC_13.RomanToInt("MCMXCIV");
 
 
         }
