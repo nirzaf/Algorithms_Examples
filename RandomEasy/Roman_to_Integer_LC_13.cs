@@ -18,7 +18,8 @@ namespace Algorithm_A_Day.RandomEasy
 
             int result = 0;
             for (int i = 0; i < s.Length; i++)
-                if ((s[i] == 'I' || s[i] == 'X' || s[i] == 'C') && i < s.Length - 1 && symbols.ContainsKey(s.Substring(i, 2)))
+                if ((s[i] == 'I' || s[i] == 'X' || s[i] == 'C')
+                    && i < s.Length - 1 && symbols.ContainsKey(s.Substring(i, 2)))
                     result += symbols[s.Substring(i++, 2)];
                 else
                     result += symbols[s[i].ToString()];
