@@ -109,7 +109,8 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Longest_Repeating_Character_Replacement_LC_424.CharacterReplacement("ABAB", 2);
+            Longest_Repeating_Character_Replacement_LC_424.CharacterReplacement("AABABBA", 1);
+
 
 
         }

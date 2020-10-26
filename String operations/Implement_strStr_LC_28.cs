@@ -51,6 +51,15 @@ namespace Algorithm_A_Day.String_operations
         }
 
         // 2 pointers
+        /// <summary>
+        /// here we keep 2 pointers for each char in needle and haystack
+        /// we loop in length of haystack 
+        /// each iteration we check if chars are equal if yes we increase both pointers
+        /// if not we substract needleIndex form i index and set NeedleIndex to 0 
+        /// so else part set needleIndex to 0 in case part of needle is present e.g.,
+        /// lello ll first l is part of ll but second ll is whole target
+        /// </summary>
+
         public static int StrStr2(string haystack, string needle)
         {
             if (needle.Length == 0) return 0;
