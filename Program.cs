@@ -109,7 +109,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Longest_Repeating_Character_Replacement_LC_424.CharacterReplacement("AABABBA", 1);
+            Count_Primes_LC_204.CountPrimes(11);
 
 
 

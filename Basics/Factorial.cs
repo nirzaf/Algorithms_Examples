@@ -30,6 +30,25 @@ namespace Algorithm_A_Day.Basics
             }
            
         }
+
+
+        //JS
+        //function fac(a)
+        //{
+        //    if (a == 0) return 1;
+        //    else
+        //    {
+        //        return a * fac(a - 1);
+        //    }
+        //}
+
+        //console.log(fac(3));
+
+        // return 1;
+        // return 1 * fac(0); -> 1 * 1
+        // retrurn 2 * fac(1); -> 2 * 1
+        // return 3 * fac(2); -> 3 * 2
+        //5 1 * 2 * 3 * 4 * 5
     }
 }
 
