@@ -33,6 +33,7 @@ using Algorithm_A_Day.Multidimensional_Arrays;
 using System.Numerics;
 using Algorithm_A_Day.RandomEasy;
 using Algorithm_A_Day.String_operations.Pramp;
+using Algorithm_A_Day.DP;
 
 namespace Algorith_A_Day
 {
@@ -53,7 +54,7 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             // linked list
-            ListNode x1 = new ListNode(1), x2 = new ListNode(4), x3 = new ListNode(5), x4 = new ListNode(4), x5 = new ListNode(5);
+            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(4), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
             //x3.next = x4;
@@ -109,7 +110,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Count_Primes_LC_204.CountPrimes(11);
+            Delete_Operation_for_Two_Strings_LC_583.DeletionDistance("hit", "heat");
 
 
 
