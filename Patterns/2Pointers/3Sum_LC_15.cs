@@ -2,12 +2,54 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Algorithm_A_Day.Arrays
+namespace Algorithm_A_Day.Patterns._2Pointers
 {
-    public class ThreeSum_LC_15
+    /// <summary>
+    /// first we need to sort the array so we can make use of pointers
+    /// we do 2Sum for each number in array 
+    /// to avoid duplicates we move pointers if the numbers in array are the same  
+    /// </summary>
+    public class _Sum_LC_15
     {
-        //===========Find triplets in an array A, a + b = c where all elements are from the array
-        //using sorting O(n log(n)) if we have one sum here we look for all the sums
+        public static IList<IList<int>> ThreeSum(int[] nums)
+        {
+            var result = new List<IList<int>>();
+            if (nums.Length == 0 || nums == null) return result;
+            Array.Sort(nums);
+
+            for (int i = 0; i < nums.Length - 2; i++)
+            {
+                int left = i + 1;
+                int right = nums.Length - 1;
+                int sum = 0 - nums[i];
+                if (i == 0 || (i > 0 && nums[i] != nums[i - 1]))
+                {
+                    while (left < right)
+                    {
+                        if (nums[left] + nums[right] == sum)
+                        {
+                            result.Add(new List<int> { nums[i], nums[left], nums[right] });
+                            while (left < right && nums[left] == nums[left + 1]) left++;
+                            while (left < right && nums[right] == nums[right - 1]) right--;
+                            left++;
+                            right--;
+                        }
+                        else if (nums[left] + nums[right] > sum)
+                        {
+                            right--;
+                        }
+                        else
+                        {
+                            left++;
+                        }
+                    }
+                }
+            }
+            return result;
+
+        }
+        
+        // variation of above
         public static List<List<int>> FindTriplets(int[] arr)
         {
             var result = new List<List<int>>();

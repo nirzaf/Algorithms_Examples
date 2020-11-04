@@ -9,6 +9,7 @@ namespace Algorithm_A_Day.RandomEasy
     {
 
         /// <summary>
+        /// linked-list
         /// current.next = l1/l2  changes the result but current = current.l1/l2 doesn't
         /// reference more todo 
         /// </summary>

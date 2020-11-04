@@ -34,6 +34,7 @@ using System.Numerics;
 using Algorithm_A_Day.RandomEasy;
 using Algorithm_A_Day.String_operations.Pramp;
 using Algorithm_A_Day.DP;
+using Algorithm_A_Day.Arrays;
 
 namespace Algorith_A_Day
 {
@@ -104,13 +105,13 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 2, 3, 1, 2, 4, 3 };
-            var sortedArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 15, 21, 50, 200, 400 };
+            var testArr = new int[] { 2, 3, 0, 0,0 };
+            var sortedArr = new int[] { 2, 5, 8 };
             var mixedArr = new int[] { 1, 2, 2 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Delete_Operation_for_Two_Strings_LC_583.DeletionDistance("hit", "heat");
+            Merge_Sorted_Array_88.Merge(testArr, 2, sortedArr, 3);
 
 
 
