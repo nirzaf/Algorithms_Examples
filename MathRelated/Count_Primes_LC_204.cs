@@ -45,6 +45,8 @@ namespace Algorithm_A_Day.MathRelated
         /// <summary>
         /// this solution makes use of algorith called : "Sieve of Eratosthenes"
         /// https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+        /// ODSIEWANIE WIELOKROTONOSCI LICZB PRZY KOLEJNYCH WIELOKROTNOSCIACH NIE MA KOLEJNYCH SPRAWDZEN
+        /// NP DLA 2 NIE MA SPRAWDZENB DLA 4 6 8 ITD
         /// first we create bool array of size n set all to true assuming they all prime
         /// then we filter out the not primes so all left at the end are primes
         /// doing this by filter out all multiplications of i from 2

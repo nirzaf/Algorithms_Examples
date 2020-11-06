@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Algorithm_A_Day.RandomEasy
 {
-    public class Merge_Two_Sorted_Lists_LC_21
+    public class Merge_Two_Sorted_L_Lists_LC_21
     {
 
         /// <summary>
@@ -25,6 +25,8 @@ namespace Algorithm_A_Day.RandomEasy
 
             while (l1 != null && l2 != null)
             {
+                var r1 = Object.ReferenceEquals(result, current);
+                var r2 = Object.ReferenceEquals(result, current.next);
                 
                 if (l1.val < l2.val)
                 {

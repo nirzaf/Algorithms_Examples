@@ -105,13 +105,14 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 2, 3, 0, 0,0 };
-            var sortedArr = new int[] { 2, 5, 8 };
+            var testArr = new int[] { 4, 9, 5 };
+            var sortedArr = new int[] { 9, 4, 9, 8, 4 };
             var mixedArr = new int[] { 1, 2, 2 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            Merge_Sorted_Array_88.Merge(testArr, 2, sortedArr, 3);
+            //Merge_Two_Sorted_L_Lists_LC_21.MergeTwoLists(x1, y1);
+            Intersection_of_Two_Arrays_II_LC_350.Intersect2(testArr, sortedArr);
 
 
 
@@ -120,21 +121,31 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static void Example()
+        private static int Yesterday(int n)
         {
-            var q = new Queue<int>();
-            q.Enqueue(3);
-            q.Enqueue(1);
-            q.Enqueue(10);
+            int result = 0;
 
-            var x = q.Dequeue();// 3
+            var primes = new bool[n];
+            for (int i = 0; i < n; i++)
+            {
+                primes[i] = true;
+            }
 
-            var s = new Stack<int>();
-            s.Push(3);
-            s.Push(1);
-            s.Push(10);
+            for (int i = 2; i < n; i++)
+            {
+                if (primes[i])
+                {
+                    for (int j = i; j < primes.Length; j++)
+                    {
+                        primes[i * j] = false;
+                    }
+                }
+            }
 
-            var x2 = s.Pop(); // 10
+
+
+
+            return result;
 
 
         }
