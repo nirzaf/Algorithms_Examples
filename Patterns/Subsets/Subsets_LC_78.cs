@@ -7,6 +7,11 @@ namespace Algorithm_A_Day.Patterns.Subsets
 {
     public class Subsets_LC_78
     {
+        /// <summary>
+        /// var subset = result[i] copies the references so its the same object 
+        /// var subset = result[i].ToList() creates new obj with diff references
+        /// </summary>
+
         public static IList<IList<int>> Subsets(int[] nums)
         {
             IList<IList<int>> result = new List<IList<int>>();
@@ -18,8 +23,9 @@ namespace Algorithm_A_Day.Patterns.Subsets
                 int currentCount = result.Count;
                 for (int i = 0; i < currentCount; i++)
                 {
-                    var x = result[i];
-                    List<int> subset = result[i].ToList();// save the current list
+                    
+                    var subset = result[i].ToList();// save the current list
+                    var x = Object.ReferenceEquals(result[i], subset);
                     subset.Add(num);
                     result.Add(subset);
                 }
@@ -55,6 +61,10 @@ namespace Algorithm_A_Day.Patterns.Subsets
             helper(nums, result, currentList, 0);
             return result;
         }
+        /// <summary>
+        /// here BASE CASE is for loop condition
+        /// //todo: easy recursion with for loop to study
+        /// </summary>
 
         private static void helper(int[] nums, IList<IList<int>> result,
                                     List<int> currentList, int start)

@@ -105,14 +105,15 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 4, 9, 5 };
-            var sortedArr = new int[] { 9, 4, 9, 8, 4 };
-            var mixedArr = new int[] { 1, 2, 2 };
+            var testArr = new int[] { 2, 1, 2, 1 };
+            var sortedArr = new int[] { 2, 2 };
+            var mixedArr = new int[] { 1, 1, 2, 2, 4 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
             //Merge_Two_Sorted_L_Lists_LC_21.MergeTwoLists(x1, y1);
-            Intersection_of_Two_Arrays_II_LC_350.Intersect2(testArr, sortedArr);
+            //Intersection_of_Two_Arrays_II_LC_350.Intersect2(testArr, sortedArr);
+            Single_Number_LC_136.SingleNumber2(mixedArr);
 
 
 
@@ -121,34 +122,15 @@ namespace Algorith_A_Day
         //{ 2, 1, 5, 6, 7, 3 };
         //{ 0,1,2,2,3,0,4,2 };
 
-        private static int Yesterday(int n)
-        {
-            int result = 0;
+        //private static int Yesterday(int n)
+        //{
+        //    foreach (var item in collection)
+        //    {
 
-            var primes = new bool[n];
-            for (int i = 0; i < n; i++)
-            {
-                primes[i] = true;
-            }
-
-            for (int i = 2; i < n; i++)
-            {
-                if (primes[i])
-                {
-                    for (int j = i; j < primes.Length; j++)
-                    {
-                        primes[i * j] = false;
-                    }
-                }
-            }
+        //    }
 
 
-
-
-            return result;
-
-
-        }
+        //}
 
         private static void MergeSortEx(int[] arr, int left, int right)
         {

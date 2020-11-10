@@ -55,3 +55,25 @@ function spiralOrder(matrix) {
     return result;
     
 }
+
+var singleNumber = function (nums) {
+    if (nums === null) return -1;
+
+    let dict = {};
+
+    for (let num of nums) {
+        if (!dict.num === null) {
+            dict.num++;
+        }
+        else {
+            dick[num] = 1;
+        }
+    }
+
+    for (var kv in dict) {
+        if (dick[kv] === 1) {
+            return kv;
+        }
+    }
+    return -1;
+};
