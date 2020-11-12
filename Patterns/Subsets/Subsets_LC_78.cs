@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,7 +64,6 @@ namespace Algorithm_A_Day.Patterns.Subsets
         }
         /// <summary>
         /// here BASE CASE is for loop condition
-        /// //todo: easy recursion with for loop to study
         /// </summary>
 
         private static void helper(int[] nums, IList<IList<int>> result,

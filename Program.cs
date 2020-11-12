@@ -105,31 +105,22 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 2, 1, 2, 1 };
-            var sortedArr = new int[] { 2, 2 };
+            var testArr = new int[] { 3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4 };
+            var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 1, 2, 2, 4 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
 
 
-            //Merge_Two_Sorted_L_Lists_LC_21.MergeTwoLists(x1, y1);
-            //Intersection_of_Two_Arrays_II_LC_350.Intersect2(testArr, sortedArr);
-            Single_Number_LC_136.SingleNumber2(mixedArr);
+            Console.WriteLine(Integer_to_Roman_LC_12.IntToRoman3(846));
 
 
 
         }
-        //  0  1  2  3  4  5
-        //{ 2, 1, 5, 6, 7, 3 };
-        //{ 0,1,2,2,3,0,4,2 };
+
 
         //private static int Yesterday(int n)
         //{
-        //    foreach (var item in collection)
-        //    {
-
-        //    }
-
-
+            
         //}
 
         private static void MergeSortEx(int[] arr, int left, int right)
@@ -138,4 +129,5 @@ namespace Algorith_A_Day
         }
     }
 
+    
 }
