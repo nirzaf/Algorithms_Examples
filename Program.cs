@@ -36,6 +36,7 @@ using Algorithm_A_Day.String_operations.Pramp;
 using Algorithm_A_Day.DP;
 using Algorithm_A_Day.Arrays;
 using Algorithm_A_Day.Backtracking;
+using Algorithm_A_Day.Recursion;
 
 namespace Algorith_A_Day
 {
@@ -110,24 +111,31 @@ namespace Algorith_A_Day
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 1, 2, 2, 4 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
+            var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            Letter_Combinations_of_P_Number_LC_17_M.LetterCombinations("23");
-
+            Reverse_String_LC_344_E.ReverseString(charA);
 
 
         }
 
 
-        //private static int Yesterday(int n)
-        //{
-            
-        //}
-
-        private static void MergeSortEx(int[] arr, int left, int right)
+        private static int Yesterday(int n)
         {
-
+            // Bit represents values from 0 to 1 (2 values)
+            // A byte is defined as 8-bits and can represent values from 0 to 255,
+            // or 2 to the power of 8 different values. A byte represents 256 different values.
+            // 1 byte is group of 8 bits
+            // 8 bits can make 256 different patterns
+            int max = 255;
+            for (byte i = 0; i < max; i++)
+            {
+                Console.WriteLine(i);
+                Console.WriteLine();
+            }
+            return max;
         }
+
     }
 
     
