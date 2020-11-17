@@ -57,10 +57,10 @@ namespace Algorith_A_Day
             Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             // linked list
-            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(4), x4 = new ListNode(4), x5 = new ListNode(5);
+            ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
             x1.next = x2;
             x2.next = x3;
-            //x3.next = x4;
+            x3.next = x4;
             //x4.next = x5;
 
             ListNode y1 = new ListNode(1), y2 = new ListNode(3), y3 = new ListNode(4);
@@ -114,7 +114,7 @@ namespace Algorith_A_Day
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            Reverse_String_LC_344_E.ReverseString(charA);
+            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs(x1);
 
 
         }
