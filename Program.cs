@@ -37,6 +37,7 @@ using Algorithm_A_Day.DP;
 using Algorithm_A_Day.Arrays;
 using Algorithm_A_Day.Backtracking;
 using Algorithm_A_Day.Recursion;
+using System.Collections;
 
 namespace Algorith_A_Day
 {
@@ -61,7 +62,7 @@ namespace Algorith_A_Day
             x1.next = x2;
             x2.next = x3;
             x3.next = x4;
-            //x4.next = x5;
+            x4.next = x5;
 
             ListNode y1 = new ListNode(1), y2 = new ListNode(3), y3 = new ListNode(4);
             y1.next = y2;
@@ -114,27 +115,17 @@ namespace Algorith_A_Day
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs(x1);
+            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs2(x1);
+            Defanging_an_IP_Address_1108_E.DefangIPaddr4("1.1.1.1");
 
 
         }
 
 
-        private static int Yesterday(int n)
-        {
-            // Bit represents values from 0 to 1 (2 values)
-            // A byte is defined as 8-bits and can represent values from 0 to 255,
-            // or 2 to the power of 8 different values. A byte represents 256 different values.
-            // 1 byte is group of 8 bits
-            // 8 bits can make 256 different patterns
-            int max = 255;
-            for (byte i = 0; i < max; i++)
-            {
-                Console.WriteLine(i);
-                Console.WriteLine();
-            }
-            return max;
-        }
+        //private static int Yesterday(int n)
+        //{
+           
+        //}
 
     }
 
