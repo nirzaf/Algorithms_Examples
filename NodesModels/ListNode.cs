@@ -10,8 +10,8 @@ namespace Algorithm_A_Day.NodesModels
         public ListNode next;
         public ListNode(int x = 0, ListNode next = null)
         {
-            val = x;
-            next = null;
+            this.val = x;
+            this.next = next;
         }
     }
 }

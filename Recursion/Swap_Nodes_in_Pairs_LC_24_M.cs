@@ -5,11 +5,20 @@ using System.Text;
 
 namespace Algorithm_A_Day.Recursion
 {
-    
+    /// <summary>
+    ///  /// a->b->c->d 
+    /// second node in orginal LL is always a start in new LL
+    /// each iteration we're changing second node pointer direction so for a->b  to a-><-b
+    /// we are loosing connection to c node so we save it in temporary variable 
+    /// then we set new pointer for a to next of temp(d) variable  b->a->d
+    /// then we change temp for second pair of nodes (temp alwasy point for the next of second node in a pair)
+
+    /// </summary>
     public class Swap_Nodes_in_Pairs_LC_24_M
     {
         //recursive
-        public ListNode SwapPairs(ListNode head)
+        // todo: nicely shows recursion
+        public static ListNode SwapPairs(ListNode head)
         {
             if (head?.next == null)
                 return head;
@@ -26,14 +35,7 @@ namespace Algorithm_A_Day.Recursion
 
 
         /// <summary>
-        /// a->b->c->d 
-        /// second node in orginal LL is always a start in new LL
-        /// each iteration we're changing second node pointer direction so for a->b  to a-><-b
-        /// we are loosing connection to c node so we save it in temporary variable 
-        /// then we set new pointer for a to next of temp(d) variable  b->a->d
-        /// then we change temp for second pair of nodes (temp alwasy point for the next of second node in a pair)
         /// 1->2->3->4
-        /// 
         /// p = 1->2->3->4->5, newStart = 2->3->4->5
         /// FIRST ITERATION
         /// q = 2->3->4->5
@@ -82,7 +84,7 @@ namespace Algorithm_A_Day.Recursion
             return newStart;
         }
 
-        public ListNode SwapPairs3(ListNode head)
+        public static ListNode SwapPairs3(ListNode head)
         {
             if (head == null || head.next == null)
             {
@@ -91,8 +93,8 @@ namespace Algorithm_A_Day.Recursion
 
             ListNode dummy = new ListNode(0, head);
             ListNode previous = dummy;
-            ListNode current = previous.next;
-            ListNode next = current.next;
+            ListNode current = previous.next; //1
+            ListNode next = current.next; //2
 
             //    P    C    N
             // I: D -> 1 -> 2 -> 3
@@ -100,9 +102,9 @@ namespace Algorithm_A_Day.Recursion
 
             while (current != null && next != null)
             {
-                previous.next = next;      // (P)D -> (N)2 -> 3,  (C)1 -> 2
-                current.next = next.next;  // D -> 2 -> 3,  1 -> 3 
-                next.next = current;       // (P)D -> (N)2 -> (C)1 -> 3
+                previous.next = next;      // (P)D -> (N)2 -> 3,  (C)1 -> 2  0
+                current.next = next.next;  // D -> 2 -> 3,  1 -> 3           1   
+                next.next = current;       // (P)D -> (N)2 -> (C)1 -> 3      2   
 
                 previous = current;
                 current = current.next;

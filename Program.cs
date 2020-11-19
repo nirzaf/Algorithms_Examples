@@ -115,19 +115,32 @@ namespace Algorith_A_Day
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs2(x1);
-            Defanging_an_IP_Address_1108_E.DefangIPaddr4("1.1.1.1");
-
-
+            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs3(x1);
+            //Defanging_an_IP_Address_1108_E.DefangIPaddr4("1.1.1.1");
+            //Reverse_Linked_List_LC_206.ReverseListRecur(x1);
+            Console.WriteLine(N_th_Tribonacci_Number_1137.Tribonacci2(25));
         }
 
+        public static ListNode ReverseList(ListNode head)
+        {
+            if (head == null) return head;
 
-        //private static int Yesterday(int n)
-        //{
-           
-        //}
+            var current = head;
+            ListNode prev = new ListNode();
+            var next = current.next;
 
+            while (current != null || current.next != null)
+            {
+                current.next = prev;
+                prev = next;
+                next.next = current;
+
+                current = prev.next; 
+            }
+
+            return prev;
+
+        }
     }
-
     
 }
