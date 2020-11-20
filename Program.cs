@@ -118,7 +118,11 @@ namespace Algorith_A_Day
             //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs3(x1);
             //Defanging_an_IP_Address_1108_E.DefangIPaddr4("1.1.1.1");
             //Reverse_Linked_List_LC_206.ReverseListRecur(x1);
-            Console.WriteLine(N_th_Tribonacci_Number_1137.Tribonacci2(25));
+            //Console.WriteLine(N_th_Tribonacci_Number_1137.Tribonacci2(25));
+            int val1 = 0; //must be initialized 
+            int val2; //optional
+
+            Length_of_Last_Word_LC_58_E.LengthOfLastWord("a ");
         }
 
         public static ListNode ReverseList(ListNode head)
@@ -140,6 +144,14 @@ namespace Algorith_A_Day
 
             return prev;
 
+        }
+        static void Example1(ref int value) //called method
+        {
+            value = 1;
+        }
+        static void Example2(out int value) //called method
+        {
+            value = 2; //must be initialized
         }
     }
     
