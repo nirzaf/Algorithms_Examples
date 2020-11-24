@@ -108,51 +108,31 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 2, 5, 1, 3, 4, 7 };
+            var testArr = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
             var sortedArr = new int[] { 1, 2, 3 };
-            var mixedArr = new int[] { 1, 1, 2, 2, 4 };
+            var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
+            Maximum_Subarray_LC_53_E.MaxSubArray2(testArr);
 
-            //Swap_Nodes_in_Pairs_LC_24_M.SwapPairs3(x1);
-            //Defanging_an_IP_Address_1108_E.DefangIPaddr4("1.1.1.1");
-            //Reverse_Linked_List_LC_206.ReverseListRecur(x1);
-            //Console.WriteLine(N_th_Tribonacci_Number_1137.Tribonacci2(25));
-            int val1 = 0; //must be initialized 
-            int val2; //optional
-
-            Length_of_Last_Word_LC_58_E.LengthOfLastWord("a ");
         }
-
+        
         public static ListNode ReverseList(ListNode head)
         {
-            if (head == null) return head;
-
-            var current = head;
-            ListNode prev = new ListNode();
-            var next = current.next;
-
-            while (current != null || current.next != null)
+            IEnumerable x = new List<int>() { 1, 2, 3, 4, 5 };
+            
+            var y = x.GetEnumerator();
+            while(y.MoveNext())
             {
-                current.next = prev;
-                prev = next;
-                next.next = current;
-
-                current = prev.next; 
+                Console.WriteLine(y.Current);
             }
+            return new ListNode();
+        }
 
-            return prev;
-
-        }
-        static void Example1(ref int value) //called method
-        {
-            value = 1;
-        }
-        static void Example2(out int value) //called method
-        {
-            value = 2; //must be initialized
-        }
+        
+        
     }
-    
+
+
 }

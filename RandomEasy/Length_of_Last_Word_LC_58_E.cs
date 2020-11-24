@@ -15,8 +15,6 @@ namespace Algorithm_A_Day.RandomEasy
             return arr[arr.Length - 1].Length;
 
         }
-        
-
         public int LengthOfLastWord2(string s)
         {
             var n = s.Length;
