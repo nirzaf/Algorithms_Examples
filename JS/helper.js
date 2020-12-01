@@ -77,3 +77,18 @@ var singleNumber = function (nums) {
     }
     return -1;
 };
+
+
+// search for minimal and delete until find kth smallest
+numbers = [3, 2, 55, -10, -55, 5, 3, 2, 1, -5, 33, 9, -1, 4, 5];
+
+function FindSmallestNumber(arr, limit) {
+    var min = '';
+    for (var counter = 1; counter <= limit; counter++) {
+        min = Math.min.apply(Math, arr);
+        arr.splice(arr.indexOf(min), 1);
+    }
+    console.log(min);
+}
+
+FindSmallestNumber(Numbers, 3); //3rd smallest number

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithm_A_Day", "Algorithm_A_Day.csproj", "{AAFF0F5D-0C8C-48C4-AB21-5004BA276DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorith_A_Day.Tests", "..\Algorith_A_Day.Tests\Algorith_A_Day.Tests\Algorith_A_Day.Tests.csproj", "{46AB6450-D81F-4E3F-875C-F858A0FC2EC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AAFF0F5D-0C8C-48C4-AB21-5004BA276DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAFF0F5D-0C8C-48C4-AB21-5004BA276DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAFF0F5D-0C8C-48C4-AB21-5004BA276DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AB6450-D81F-4E3F-875C-F858A0FC2EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AB6450-D81F-4E3F-875C-F858A0FC2EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AB6450-D81F-4E3F-875C-F858A0FC2EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AB6450-D81F-4E3F-875C-F858A0FC2EC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

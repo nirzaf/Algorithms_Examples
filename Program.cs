@@ -38,6 +38,7 @@ using Algorithm_A_Day.Arrays;
 using Algorithm_A_Day.Backtracking;
 using Algorithm_A_Day.Recursion;
 using System.Collections;
+using Algorithm_A_Day.FromCompanies;
 
 namespace Algorith_A_Day
 {
@@ -76,23 +77,24 @@ namespace Algorith_A_Day
 
             
 
-            int[][] intervals = new int[3][];
-            intervals[0] = new[] { 1, 2, 3 };
-            intervals[1] = new[] { 4, 5, 6 };
-            intervals[2] = new[] { 7, 8, 9 };
-            //intervals[3] = new[] { 1, 3 };
+            int[][] intervals = new int[5][];
+            intervals[0] = new[] { 1, 2 };
+            intervals[1] = new[] { 3, 5 };
+            intervals[2] = new[] { 6, 7 };
+            intervals[3] = new[] { 8, 10 };
+            intervals[4] = new[] { 12, 16 };
             
             int[][] arrOfArrays = new int[4][];
             arrOfArrays[0] = new[] { 5, 1, 9, 11 };
             arrOfArrays[1] = new[] { 2, 4, 8, 10 };
             arrOfArrays[2] = new[] { 13, 3, 6, 7 };
             arrOfArrays[3] = new[] { 15, 14, 12, 16 };
-
+            
             var arrOfArrays2 = new int[][]
             {
-                new int[] { 1, 2, 3 },
-                new int[] { 4, 5, 6 },
-                new int[] { 7, 8, 9 }
+                new int[] { 1,  5,  9 },
+                new int[] { 5, 6, 10 },
+                new int[] { 12, 13, 15 }
 
             };
 
@@ -108,14 +110,15 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+            var testArr = new int[] { 3, 6, 3, 6, 6, 9 };
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
-            Maximum_Subarray_LC_53_E.MaxSubArray2(testArr);
-
+            //Insert_Interval_LC_57_M.Insert(intervals, new int[] { 4, 8 } );
+            Kth_Smallest_Element_in__Sorted_Matrix_LC_378_M.KthSmallest31(arrOfArrays2, 2);
+            
         }
         
         public static ListNode ReverseList(ListNode head)
