@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace Algorithm_A_Day.Multidimensional_Arrays
 {
+
+    /// <summary>
+    /// good explanation: https://www.youtube.com/watch?v=FOa55B9Ikfg
+    /// </summary>
     public class Kth_Smallest_Element_in__Sorted_Matrix_LC_378_M
     {
-        
-
         //brute force
         public int KthSmallest1(int[][] matrix, int k)
         {
+            if (matrix == null || matrix.Length == 0) return 0;
             var list = new List<int>();
             for (int i = 0; i < matrix.Length; i++)
             {
@@ -29,6 +32,8 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
         // binary search
         public static int KthSmallest2(int[][] matrix, int k)
         {
+            if (matrix == null || matrix.Length == 0) return 0;
+
             List<int> sorted = new List<int>();
 
             int row = matrix.Length;
@@ -48,22 +53,22 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
             {
                 for (int c = 0; c < col; c++)
                 {
-                    placeValue(sorted, matrix[r][c]);
+                    PlaceValue(sorted, matrix[r][c]);
                 }
             }
 
             return sorted[k - 1];
         }
 
-        private static void placeValue(List<int> sorted, int val)
+        private static void PlaceValue(List<int> sorted, int val)
         {
 
-            helper(sorted, val, 0, sorted.Count);
+            Helper(sorted, val, 0, sorted.Count);
 
         }
 
         // a binary search sort
-        private static void helper(List<int> sorted, int val, int left, int right)
+        private static void Helper(List<int> sorted, int val, int left, int right)
         {
             if (left > right)
             {
@@ -95,7 +100,7 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
                 // otherwise, move to left of middle point and try again 
                 else
                 {
-                    helper(sorted, val, left, mid - 1);
+                    Helper(sorted, val, left, mid - 1);
                 }
             }
             // if the mid point is lesser, the value should be on the upper point 
@@ -114,7 +119,7 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
                 // otherwise we move to right of mid point and try again 
                 else
                 {
-                    helper(sorted, val, mid + 1, right);
+                    Helper(sorted, val, mid + 1, right);
                 }
             }
         }
@@ -122,6 +127,8 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
         // heap
         public static int KthSmallest3(int[][] matrix, int k)
         {
+            if (matrix == null || matrix.Length == 0) return 0;
+
             int row = matrix.Length;
             int col = matrix[0].Length;
             SortedList<int, Tuple<int, int>> queue = new SortedList<int, Tuple<int, int>>(new DuplicateKeyComparer<int>());
@@ -149,6 +156,8 @@ namespace Algorithm_A_Day.Multidimensional_Arrays
 
         public static int KthSmallest31(int[][] matrix, int k)
         {
+            if (matrix == null || matrix.Length == 0) return 0;
+
             int result = 0;
 
             var rows = matrix.Length;

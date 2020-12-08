@@ -39,6 +39,7 @@ using Algorithm_A_Day.Backtracking;
 using Algorithm_A_Day.Recursion;
 using System.Collections;
 using Algorithm_A_Day.FromCompanies;
+using Algorithm_A_Day.Patterns.MergeIntervals.InsertInterval;
 
 namespace Algorith_A_Day
 {
@@ -116,9 +117,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
-            //Insert_Interval_LC_57_M.Insert(intervals, new int[] { 4, 8 } );
-            Kth_Smallest_Element_in__Sorted_Matrix_LC_378_M.KthSmallest31(arrOfArrays2, 2);
-            
+            //Insert_Interval_LC_57_M.Insert(intervals, new int[] { 4, 8 });
         }
         
         public static ListNode ReverseList(ListNode head)
