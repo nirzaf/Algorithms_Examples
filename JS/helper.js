@@ -66,12 +66,12 @@ var singleNumber = function (nums) {
             dict.num++;
         }
         else {
-            dick[num] = 1;
+            dict[num] = 1;
         }
     }
 
     for (var kv in dict) {
-        if (dick[kv] === 1) {
+        if (dict[kv] === 1) {
             return kv;
         }
     }

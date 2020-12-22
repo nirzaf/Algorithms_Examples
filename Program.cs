@@ -111,13 +111,15 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 3, 6, 3, 6, 6, 9 };
+            var testArr = new int[] { 8, 1, 2, 2, 3 };
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
             //Insert_Interval_LC_57_M.Insert(intervals, new int[] { 4, 8 });
+
+            //How___Number_LC_1365_E.SmallerNumbersThanCurrent(testArr);
         }
         
         public static ListNode ReverseList(ListNode head)
