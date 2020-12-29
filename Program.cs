@@ -40,6 +40,7 @@ using Algorithm_A_Day.Recursion;
 using System.Collections;
 using Algorithm_A_Day.FromCompanies;
 using Algorithm_A_Day.Patterns.MergeIntervals.InsertInterval;
+using Algorithm_A_Day.BinaryTree;
 
 namespace Algorith_A_Day
 {
@@ -53,11 +54,15 @@ namespace Algorith_A_Day
 
             TreeNode tree = new TreeNode(5, new TreeNode(4, new TreeNode(11, new TreeNode(7, null, null), new TreeNode(2, null, null)), null),
                                 new TreeNode(8, new TreeNode(13, null, null), new TreeNode(4, new TreeNode(5, null, null), new TreeNode(1, null, null))));
+            TreeNode tree1 = new TreeNode(1, new TreeNode(2, null, null), new TreeNode(3, null, null));
+            TreeNode tree2 = new TreeNode(1, new TreeNode(2, null, null), new TreeNode(3, null, null));
+            //TreeNode tree2 = new TreeNode(1, null, new TreeNode(2, null, null));
+
 
             TreeNode tree3 = new TreeNode(3, new TreeNode(9, null, null), new TreeNode(20, new TreeNode(15, null, null), new TreeNode(7, null, null)));
             TreeNode tree4 = new TreeNode(2147483647, new TreeNode(2147483647, null, null), new TreeNode(2147483647, null, null));
 
-            Node tree1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
+            Node node1 = new Node(1, new Node(3, new Node(5, null, null), new Node(4, null, null)),
                                 new Node(2, new Node(3, null, null), new Node(8, null, null)));
             // linked list
             ListNode x1 = new ListNode(1), x2 = new ListNode(2), x3 = new ListNode(3), x4 = new ListNode(4), x5 = new ListNode(5);
@@ -117,9 +122,8 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
-            //Insert_Interval_LC_57_M.Insert(intervals, new int[] { 4, 8 });
-
-            //How___Number_LC_1365_E.SmallerNumbersThanCurrent(testArr);
+            
+            //Same_Tree_LC_100_E.IsSameTree(tree1, tree2);
         }
         
         public static ListNode ReverseList(ListNode head)
