@@ -122,8 +122,8 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
-            
-            //Same_Tree_LC_100_E.IsSameTree(tree1, tree2);
+
+            Same_Tree_LC_100_E.IsSameTree2(tree1, tree2);
         }
         
         public static ListNode ReverseList(ListNode head)
