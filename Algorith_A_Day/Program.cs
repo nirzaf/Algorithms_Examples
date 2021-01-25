@@ -116,7 +116,7 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 8, 1, 2, 2, 3 };
+            var testArr = new int[] { 1, 4, 2, 5, 3 };
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
@@ -124,7 +124,7 @@ namespace Algorith_A_Day
 
 
             //Same_Tree_LC_100_E.IsSameTree2(tree1, tree2);
-
+            Sum_Subarrays_LC__1588_E.SumOddLengthSubarrays2(testArr);
 
         }
         

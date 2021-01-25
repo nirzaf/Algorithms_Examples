@@ -48,6 +48,7 @@ namespace Algorithm_A_Day.RandomEasy
     //     };
 
     //    var maximumWealth = function(accounts) {
+          //return in reduce returns to accumulation variable
     //    return accounts.reduce((acc, val) => {
     //        const result = val.reduce((acc, val) => acc + val, 0);
     //        return Math.max(result, acc);
