@@ -81,14 +81,12 @@ namespace Algorith_A_Day
             var listOfLN = new ListNode[] { x1, y1, z1 };
 
 
-            
 
-            int[][] intervals = new int[5][];
-            intervals[0] = new[] { 1, 2 };
-            intervals[1] = new[] { 3, 5 };
-            intervals[2] = new[] { 6, 7 };
-            intervals[3] = new[] { 8, 10 };
-            intervals[4] = new[] { 12, 16 };
+            int[][] intervals = new int[4][];
+            intervals[0] = new[] { 5, 8 };
+            intervals[1] = new[] { 3, 9 };
+            intervals[2] = new[] { 5, 12 };
+            intervals[3] = new[] { 16, 5 };
             
             int[][] arrOfArrays = new int[4][];
             arrOfArrays[0] = new[] { 5, 1, 9, 11 };
@@ -124,7 +122,8 @@ namespace Algorith_A_Day
 
 
             //Same_Tree_LC_100_E.IsSameTree2(tree1, tree2);
-            Sum_Subarrays_LC__1588_E.SumOddLengthSubarrays2(testArr);
+            //Sum_Subarrays_LC__1588_E.SumOddLengthSubarrays2(testArr);
+            Number__Square_1725_LC_E.CountGoodRectangles(intervals);
 
         }
         
