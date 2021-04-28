@@ -41,6 +41,7 @@ using System.Collections;
 using Algorithm_A_Day.FromCompanies;
 using Algorithm_A_Day.Patterns.MergeIntervals.InsertInterval;
 using Algorithm_A_Day.BinaryTree;
+using Algorithm_A_Day.RandomMedium;
 
 namespace Algorith_A_Day
 {
@@ -87,6 +88,7 @@ namespace Algorith_A_Day
             intervals[1] = new[] { 3, 9 };
             intervals[2] = new[] { 5, 12 };
             intervals[3] = new[] { 16, 5 };
+            int[] r = new int[3];
             
             int[][] arrOfArrays = new int[4][];
             arrOfArrays[0] = new[] { 5, 1, 9, 11 };
@@ -114,16 +116,14 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 1, 4, 2, 5, 3 };
+            var testArr = new int[] { 2, 3, 5 };
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "flower", "flow", "flight" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            //Same_Tree_LC_100_E.IsSameTree2(tree1, tree2);
-            //Sum_Subarrays_LC__1588_E.SumOddLengthSubarrays2(testArr);
-            Number__Square_1725_LC_E.CountGoodRectangles(intervals);
+            Sum__Array_1685_LC_M.GetSumAbsoluteDifferences2(testArr);
 
         }
         
