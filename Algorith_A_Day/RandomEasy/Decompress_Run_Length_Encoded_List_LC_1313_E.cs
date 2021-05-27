@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Algorith_A_Day.Tests.RandomEasy
+namespace Algorith_A_Day.RandomEasy
 {
     public class Decompress_Run_Length_Encoded_List_LC_1313_E
     {

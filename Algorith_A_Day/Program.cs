@@ -119,11 +119,11 @@ namespace Algorith_A_Day
             var testArr = new int[] { 2, 3, 5 };
             var sortedArr = new int[] { 1, 2, 3 };
             var mixedArr = new int[] { 1, 2, 3 };
-            var mixedArr2 = new string[] { "flower", "flow", "flight" };
+            var mixedArr2 = new string[] { "Hello", "Alaska", "Dad", "Peace" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            Sum__Array_1685_LC_M.GetSumAbsoluteDifferences2(testArr);
+            Keyboard_Row_LC_500_E.FindWords(mixedArr2);
 
         }
         

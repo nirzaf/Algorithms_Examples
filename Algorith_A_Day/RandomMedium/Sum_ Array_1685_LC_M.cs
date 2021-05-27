@@ -12,8 +12,9 @@ namespace Algorithm_A_Day.RandomMedium
         /// <summary>
         /// Brute force - time limit exceeded 
         /// </summary>
-        public static int[] GetSumAbsoluteDifferences(int[] nums)
+        public int[] GetSumAbsoluteDifferences(int[] nums)
         {
+            if (nums == null || nums.Length == 0) return Array.Empty<int>();
             int[] result = new int[nums.Length];
             if (nums == null || nums.Length == 0) return result;
 
@@ -31,7 +32,7 @@ namespace Algorithm_A_Day.RandomMedium
             return result;
         }
 
-        public static int[] GetSumAbsoluteDifferences2(int[] nums)
+        public int[] GetSumAbsoluteDifferences2(int[] nums)
         {
             int[] prefixSum = new int[nums.Length + 1];
 
