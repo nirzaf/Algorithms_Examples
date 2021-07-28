@@ -116,14 +116,14 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 2, 3, 5 };
-            var sortedArr = new int[] { 1, 2, 3 };
+            var testArr = new int[] { 0, 1, 2, 3, 4 };
+            var sortedArr = new int[] { 0, 1, 2, 2, 1 };
             var mixedArr = new int[] { 1, 2, 3 };
             var mixedArr2 = new string[] { "Hello", "Alaska", "Dad", "Peace" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            Keyboard_Row_LC_500_E.FindWords(mixedArr2);
+            Create_Order_1389_LC_E.CreateTargetArray2(testArr, sortedArr);
 
         }
         
