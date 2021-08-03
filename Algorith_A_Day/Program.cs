@@ -123,7 +123,7 @@ namespace Algorith_A_Day
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
 
-            Create_Order_1389_LC_E.CreateTargetArray2(testArr, sortedArr);
+            Self_Dividing_Numbers_LC_728_E.SelfDividingNumbers(1, 22);
 
         }
         

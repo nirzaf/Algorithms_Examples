@@ -73,7 +73,7 @@ namespace Algorithm_A_Day.RandomEasy
 
                     _target[_index] = val;
 
-                    //TODO: understand
+                    //TODO: (understand) write after some time
                     for (int start = _index + 1; start < _target.Length; start++)
                     {
                         var _t2 = _target[start];
