@@ -7,3 +7,5 @@ Jewels_and_Stones_LC_771_E;Climbing_Stairs_70 eazy DP problems
 67. Add Binary   binary adding
 
 Richest_Customer_Wealth_LC_1672_E goood js reduce examples
+
+Majority_Element_LC_169_E "Baylor Moore" majority vote algrithm

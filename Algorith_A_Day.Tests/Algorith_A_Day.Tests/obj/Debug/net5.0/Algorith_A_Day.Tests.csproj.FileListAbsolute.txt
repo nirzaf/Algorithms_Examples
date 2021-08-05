@@ -101,7 +101,6 @@ D:\C#Projects\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorit
 D:\C#Projects\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\ref\Algorith_A_Day.Tests.dll
 D:\C#Projects\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.pdb
 D:\C#Projects\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.genruntimeconfig.cache
-D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.csprojAssemblyReference.cache
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.GeneratedMSBuildEditorConfig.editorconfig
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.AssemblyInfoInputs.cache
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.AssemblyInfo.cs
@@ -204,3 +203,7 @@ D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\bin\Debug\net5.0\Alg
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\bin\Debug\net5.0\Algorithm_A_Day.pdb
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.csproj.CopyComplete
 D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.genruntimeconfig.cache
+D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\bin\Debug\net5.0\Algorithm_A_Day.deps.json
+D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\bin\Debug\net5.0\Algorithm_A_Day.runtimeconfig.json
+D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\bin\Debug\net5.0\Algorithm_A_Day.runtimeconfig.dev.json
+D:\C#Projects\AAD\Algorith_A_Day.Tests\Algorith_A_Day.Tests\obj\Debug\net5.0\Algorith_A_Day.Tests.csproj.AssemblyReference.cache

@@ -77,6 +77,14 @@ var singleNumber = function (nums) {
     }
     return -1;
 };
+//===
+const majorityElement = (nums) => {
+    const map = {};
+    for (let n of nums) {
+        map[n] = (map[n] || 0) + 1; //WOW one line for above dict...
+        if (map[n] > nums.length / 2) return n;
+    }
+};
 
 
 // search for minimal and delete until find kth smallest
