@@ -116,7 +116,7 @@ namespace Algorith_A_Day
             int p = (int)z; // it floors to 2
 
 
-            var testArr = new int[] { 0, 1, 2, 3, 4 };
+            var testArr = new int[] { 0, 0, 0 };
             var sortedArr = new int[] { 0, 1, 2, 2, 1 };
             var mixedArr = new int[] { 3, 2, 3 };
             var mixedArr2 = new string[] { "Hello", "Alaska", "Dad", "Peace" };
@@ -125,8 +125,7 @@ namespace Algorith_A_Day
 
             //Self_Dividing_Numbers_LC_728_E.SelfDividingNumbers(1, 22);
 
-            var x = new Majority_Element_LC_169_E();
-            x.MajorityElement(mixedArr);
+            Majority_Element_II_LC_229_M.MajorityElement(testArr);
 
         }
         
