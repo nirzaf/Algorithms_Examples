@@ -111,6 +111,8 @@ namespace Algorith_A_Day
                 { 7, 8, 9, 10 }
             };
 
+            var x = new int[2];
+
             var z = 2.82842;
             int o = Convert.ToInt32(z);// rounds to 3 so 2.455->2  (no ceiling 2.1 -> 3)
             int p = (int)z; // it floors to 2
@@ -122,6 +124,7 @@ namespace Algorith_A_Day
             var mixedArr2 = new string[] { "Hello", "Alaska", "Dad", "Peace" };
             var charA = new char[] { 'h', 'e', 'l', 'l', 'o' };
 
+            
 
             //Self_Dividing_Numbers_LC_728_E.SelfDividingNumbers(1, 22);
 
